@@ -66,7 +66,13 @@ body {
   flex-shrink: 0;
 }
 
-
+/* Hero CTA — matches the Figma export exactly: an open ring bracket on
+   the left with the label emerging from inside it, then a separate
+   arrow a short gap after the label. No pill/border/background box —
+   the ring is purely decorative and sits *behind* the start of the text.
+   Everything scales off --hero-ring so the proportions from Figma
+   (ring 90, label starts at x28, arrow starts at x207/ends x250,
+   viewBox 251x90) are preserved at any size. */
 .btn--hero {
   --hero-ring: clamp(56px, 7.2vw, 90px);
   position: relative;
@@ -208,6 +214,8 @@ body {
   height: 8px;
   border-radius: 4px;
   background: rgba(21, 20, 25, 0.15);
+  cursor: pointer;
+  transition: width var(--transition-base), background var(--transition-base);
 }
 
 .dot--active {

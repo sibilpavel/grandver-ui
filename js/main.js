@@ -5,6 +5,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initFilterDrawer();
+  initScrollDots();
 });
 
 /**
@@ -60,4 +61,55 @@ function initFilterDrawer() {
   trigger.addEventListener('click', open);
   closeBtn?.addEventListener('click', close);
   overlay.addEventListener('click', close);
+}
+
+/**
+ * Индикатор скролла (точки под каруселями курсов/книг на мобильных).
+ * Точка активна в зависимости от того, какая карточка сейчас видна
+ * слева в горизонтальном скролле, плюс по точке можно кликнуть,
+ * чтобы перейти к соответствующей карточке.
+ */
+function initScrollDots() {
+  document.querySelectorAll('.h-scroll').forEach((scroller) => {
+    const dotsWrap = scroller.nextElementSibling;
+    if (!dotsWrap || !dotsWrap.classList.contains('dots')) return;
+
+    const dots = Array.from(dotsWrap.querySelectorAll('.dot'));
+    const items = Array.from(scroller.children);
+    if (!dots.length || !items.length) return;
+
+    const setActive = (index) => {
+      dots.forEach((dot, i) => dot.classList.toggle('dot--active', i === index));
+    };
+
+    // Клик по точке — скроллим к соответствующей карточке.
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        const target = items[Math.round((i / (dots.length - 1)) * (items.length - 1))];
+        target?.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      });
+    });
+
+    let ticking = false;
+    const updateActiveDot = () => {
+      ticking = false;
+      const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+      if (maxScroll <= 0) {
+        setActive(0);
+        return;
+      }
+      const progress = scroller.scrollLeft / maxScroll;
+      const index = Math.round(progress * (dots.length - 1));
+      setActive(Math.min(dots.length - 1, Math.max(0, index)));
+    };
+
+    scroller.addEventListener('scroll', () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateActiveDot);
+      }
+    }, { passive: true });
+
+    updateActiveDot();
+  });
 }
