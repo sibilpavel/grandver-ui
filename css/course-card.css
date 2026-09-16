@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Course card
+   ========================================================================== */
+.course-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  flex: 0 0 305px;
+  width: 305px;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 26px rgba(23, 19, 38, 0.12);
+}
+
+.course-card__image {
+  height: 180px;
+  position: relative;
+}
+
+.course-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.course-card__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(19, 6, 45, 0.18);
+}
+
+.course-card__body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.course-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.course-card__title {
+  font-size: 22px;
+  font-weight: var(--fw-semibold);
+  line-height: 1.3;
+}
+
+.course-card__author {
+  font-size: 16px;
+  color: var(--color-text-80);
+}
+
+.course-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.course-card__price {
+  font-size: 24px;
+  font-weight: var(--fw-bold);
+}
+
+/* Grid used on the catalog page */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  flex: 1;
+}
+
+.course-grid .course-card {
+  width: 100%;
+}

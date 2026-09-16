@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GrandVer — Знания, которые помогут вам жить лучше</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/categories.css">
+<link rel="stylesheet" href="css/course-card.css">
+<link rel="stylesheet" href="css/book-card.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ==========================================================================
+     HEADER
+     ========================================================================== -->
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo">
+      <img src="/assets/img/logo/logo.svg" alt="Логотип">
+    </a>
+
+    <div class="header__right">
+      <nav class="nav">
+        <a href="index.html" class="nav__link is-active">Главная</a>
+        <a href="courses.html" class="nav__link">Курсы</a>
+        <a href="index.html#books" class="nav__link">Книги</a>
+      </nav>
+
+      <div class="header__actions">
+        <svg class="icon-btn icon-btn--search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
+        </svg>
+        <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/>
+          <path d="M2 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/>
+        </svg>
+        <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+        </svg>
+      </div>
+
+      <svg id="burgerBtn" class="burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ==========================================================================
+     MOBILE MENU
+     ========================================================================== -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu__top">
+    <span class="mobile-menu__title">Меню</span>
+    <svg id="closeMenuBtn" class="mobile-menu__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </div>
+  <label class="mobile-search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    <input type="text" placeholder="Поиск">
+  </label>
+  <nav class="mobile-nav">
+    <a href="index.html" class="mobile-nav__link is-active">Главная</a>
+    <a href="courses.html" class="mobile-nav__link">Курсы</a>
+    <a href="index.html#books" class="mobile-nav__link">Книги</a>
+  </nav>
+</div>
+
+<main>
+
+  <!-- ========================================================================
+       HERO
+       ======================================================================== -->
+  <section class="hero">
+    <div class="hero__bg">
+      <img src="assets/img/index.jpg" alt="">
+    </div>
+    <div class="hero__content">
+      <h1 class="hero__title">Знания, которые помогут вам жить лучше</h1>
+      <p class="hero__text">Онлайн-курсы и книги для саморазвития, психологии и профессионального роста. Начните инвестировать в себя уже сегодня.</p>
+      <a href="courses.html" class="btn btn--hero">
+        Просмотреть курсы
+        <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       CATEGORIES
+       ======================================================================== -->
+  <section class="section categories">
+    <h2 class="section__title" style="margin-bottom:32px;">Категории</h2>
+    <div class="categories__grid">
+
+      <article class="category-card">
+        <div>
+          <h3 class="category-card__title">Качество жизни / благополучие</h3>
+          <p class="category-card__text">Программы для поиска внутреннего баланса и повышения удовлетворенности жизнью.</p>
+        </div>
+        <a href="courses.html" class="btn--round">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <article class="category-card">
+        <div>
+          <h3 class="category-card__title">Психоэмоциональное здоровье</h3>
+          <p class="category-card__text">Курсы для преодоления стресса, снижения тревожности и управления эмоциями.</p>
+        </div>
+        <a href="courses.html" class="btn--round">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <article class="category-card">
+        <div>
+          <h3 class="category-card__title">Беременность и послеродовой период</h3>
+          <p class="category-card__text">Поддержка будущих мам для комфортной подготовки к родам и восстановления.</p>
+        </div>
+        <a href="courses.html" class="btn--round">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <article class="category-card">
+        <div>
+          <h3 class="category-card__title">Обучение для профессионалов</h3>
+          <p class="category-card__text">Специализированные программы для освоения новых методик и развития практики.</p>
+        </div>
+        <a href="courses.html" class="btn--round">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       NEW COURSES
+       ======================================================================== -->
+  <section class="section" style="background:var(--color-pink-bg);">
+    <div class="section__header">
+      <h2 class="section__title">Новые курсы</h2>
+      <a href="courses.html" class="btn btn--text">
+        Смотреть все
+        <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <div class="h-scroll">
+
+      <article class="course-card">
+        <div class="course-card__image"><img src="https://picsum.photos/seed/course-1/400/300" alt="Как справиться с тревогой и стрессом"></div>
+        <div class="course-card__body">
+          <div>
+            <div class="course-card__top">
+              <span class="chip">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l3 1.5"/></svg>
+                2 ч 45 мин
+              </span>
+              <span class="rating">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                4.8
+              </span>
+            </div>
+            <p class="course-card__title">Как справиться с тревогой и стрессом</p>
+            <p class="course-card__author">Иван Петров</p>
+          </div>
+          <div class="course-card__footer">
+            <span class="course-card__price">39€</span>
+            <a href="#" class="btn btn--text">Посмотреть
+              <svg class="btn__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="course-card">
+        <div class="course-card__image"><img src="https://picsum.photos/seed/course-2/400/300" alt="Эмоциональный интеллект в жизни и работе"></div>
+        <div class="course-card__body">
+          <div>
+            <div class="course-card__top">
+              <span class="chip">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l3 1.5"/></svg>
+                3 ч 10 мин
+              </span>
+              <span class="rating">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                4.9
+              </span>
+            </div>
+            <p class="course-card__title">Эмоциональный интеллект в жизни и работе</p>
+            <p class="course-card__author">Марина Иванова</p>
+          </div>
+          <div class="course-card__footer">
+            <span class="course-card__price">49€</span>
+            <a href="#" class="btn btn--text">Посмотреть
+              <svg class="btn__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="course-card">
+        <div class="course-card__image"><img src="https://picsum.photos/seed/course-3/400/300" alt="Сон и бессоница. Практический подход"></div>
+        <div class="course-card__body">
+          <div>
+            <div class="course-card__top">
+              <span class="chip">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l3 1.5"/></svg>
+                1 ч 20 мин
+              </span>
+              <span class="rating">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                4.6
+              </span>
+            </div>
+            <p class="course-card__title">Сон и бессоница. Практический подход</p>
+            <p class="course-card__author">Алексей Смирнов</p>
+          </div>
+          <div class="course-card__footer">
+            <span class="course-card__price">36€</span>
+            <a href="#" class="btn btn--text">Посмотреть
+              <svg class="btn__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="course-card">
+        <div class="course-card__image"><img src="https://picsum.photos/seed/course-4/400/300" alt="Привычки, которые меняют жизнь"></div>
+        <div class="course-card__body">
+          <div>
+            <div class="course-card__top">
+              <span class="chip">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l3 1.5"/></svg>
+                2 ч 45 мин
+              </span>
+              <span class="rating">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                4.8
+              </span>
+            </div>
+            <p class="course-card__title">Привычки, которые меняют жизнь</p>
+            <p class="course-card__author">Иван Петров</p>
+          </div>
+          <div class="course-card__footer">
+            <span class="course-card__price">29€</span>
+            <a href="#" class="btn btn--text">Посмотреть
+              <svg class="btn__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <div class="dots">
+      <span class="dot dot--active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       BOOKS
+       ======================================================================== -->
+  <section class="section" id="books" style="background:var(--color-pink-bg);">
+    <div class="section__header">
+      <h2 class="section__title">Книги</h2>
+      <a href="#" class="btn btn--text">
+        Смотреть все
+        <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <div class="h-scroll">
+
+      <article class="book-card">
+        <div class="book-card__cover"><img src="https://picsum.photos/seed/book-1/240/400" alt="Внутреннее спокойствие"></div>
+        <div class="book-card__body">
+          <div>
+            <p class="book-card__title">Внутреннее спокойствие</p>
+            <p class="book-card__author">Таня Петерсон</p>
+            <span class="rating book-card__rating">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+              5.0
+            </span>
+          </div>
+          <div class="book-card__footer">
+            <span class="book-card__price">20€</span>
+            <a href="#" class="btn btn--text">Купить
+              <svg class="btn__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card">
+        <div class="book-card__cover"><img src="https://picsum.photos/seed/book-2/240/400" alt="Сила привычек"></div>
+        <div class="book-card__body">
+          <div>
+            <p class="book-card__title">Сила привычек</p>
+            <p class="book-card__author">Иван Крохов</p>
+            <span class="rating book-card__rating">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+              5.0
+            </span>
+          </div>
+          <div class="book-card__footer">
+            <span class="book-card__price">24€</span>
+            <a href="#" class="btn btn--text">Купить
+              <svg class="btn__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card">
+        <div class="book-card__cover"><img src="https://picsum.photos/seed/book-3/240/400" alt="Эмоциональный интеллект"></div>
+        <div class="book-card__body">
+          <div>
+            <p class="book-card__title">Эмоциональный интеллект</p>
+            <p class="book-card__author">Леонид Кроль</p>
+            <span class="rating book-card__rating">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+              5.0
+            </span>
+          </div>
+          <div class="book-card__footer">
+            <span class="book-card__price">0€</span>
+            <a href="#" class="btn btn--text">Купить
+              <svg class="btn__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card">
+        <div class="book-card__cover"><img src="https://picsum.photos/seed/book-4/240/400" alt="Сила привычек"></div>
+        <div class="book-card__body">
+          <div>
+            <p class="book-card__title">Сила привычек</p>
+            <p class="book-card__author">Иван Крохов</p>
+            <span class="rating book-card__rating">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+              5.0
+            </span>
+          </div>
+          <div class="book-card__footer">
+            <span class="book-card__price">24€</span>
+            <a href="#" class="btn btn--text">Купить
+              <svg class="btn__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <div class="dots">
+      <span class="dot dot--active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==========================================================================
+     FOOTER
+     ========================================================================== -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <img src="/assets/img/logo/logo-footer.svg" height="50" width="168" alt="Логотип">
+      <p class="footer__desc">Мы создаем качественный образовательный контент, помогающий находить ответы на внутренние вопросы и совершенствовать навыки.</p>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__heading">Меню</h4>
+      <div class="footer__links">
+        <a href="index.html">Главная</a>
+        <a href="courses.html">Курсы</a>
+        <a href="index.html#books">Книги</a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__heading">Контакты</h4>
+      <div class="footer__links">
+        <p>+371 28700566</p>
+        <p>info@grandver.com</p>
+        <p>Brīvības gatve 214b, Rīga, LV-1039</p>
+        <a href="#" class="footer__link--accent">grandver.com</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer__bottom">© 2026 Учебный центр GrandVer. Все права защищены.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

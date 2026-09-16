@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Design tokens — GrandVer
+   ========================================================================== */
+:root {
+  /* Colors */
+  --color-purple: #4F467C;
+  --color-purple-dark: #423A65;
+  --color-purple-light: #E9E5F6;
+
+  --color-text: #100F27;
+  --color-text-80: rgba(16, 15, 39, 0.8);
+  --color-text-60: rgba(16, 15, 39, 0.6);
+  --color-text-40: rgba(16, 15, 39, 0.4);
+
+  --color-pink-bg: #FAF0F2;
+  --color-header-bg: #F9EBED;
+  --color-header-border: #F5E5E8;
+  --color-grey-bg: #F4F4F7;
+  --color-grey-input: #F5F5F9;
+  --color-grey-btn: #DEDEE5;
+
+  --color-white: #FFFFFF;
+  --color-star: #F6B23B;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 100px;
+
+  /* Shadow */
+  --shadow-card: 0 4px 8px rgba(23, 19, 38, 0.05);
+  --shadow-toolbar: 0 4px 4px rgba(23, 19, 38, 0.03);
+
+  /* Layout */
+  --container-max: 1440px;
+  --side-padding: clamp(16px, 5.5vw, 80px);
+
+  /* Typography */
+  --font-main: 'Manrope', system-ui, -apple-system, sans-serif;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+}

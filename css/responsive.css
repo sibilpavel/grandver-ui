@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Responsive — breakpoints collected in one place for clarity
+   ========================================================================== */
+
+/* ---- ≤ 900px: catalog sidebar becomes a drawer, grid goes 2-col ---- */
+@media (max-width: 900px) {
+  .catalog__layout {
+    flex-direction: column;
+  }
+
+  .filters--desktop {
+    display: none;
+  }
+
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+
+  .toolbar__filter-trigger {
+    display: inline-flex;
+  }
+}
+
+/* ---- ≤ 768px: mobile header, single-column sections, h-scrollers ---- */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .header__actions .icon-btn--search {
+    display: none; /* search moves into the mobile menu */
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .header__right {
+    gap: 16px;
+  }
+
+  .categories__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-card {
+    padding: 20px;
+  }
+
+  .category-card__title {
+    font-size: 20px;
+  }
+
+  .category-card__text {
+    font-size: 14px;
+  }
+
+  .course-card,
+  .book-card {
+    flex: 0 0 88vw;
+    width: 88vw;
+    max-width: 398px;
+  }
+
+  .course-card__title,
+  .book-card__title {
+    font-size: 20px;
+  }
+
+  .course-card__author,
+  .book-card__author {
+    font-size: 14px;
+  }
+
+  .dots {
+    display: flex;
+  }
+
+  .footer__top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__brand {
+    align-items: center;
+  }
+
+  .footer__col {
+    align-items: center;
+  }
+
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toolbar__count {
+    order: 3;
+  }
+
+  .toolbar__sort {
+    justify-content: center;
+  }
+}
+
+/* ---- ≤ 480px: small phones ---- */
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: 32px;
+  }
+
+  .btn--hero {
+    padding: 16px 24px 16px 22px;
+  }
+}

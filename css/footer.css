@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+  background: var(--color-purple-dark);
+  color: var(--color-white);
+  padding: 64px var(--side-padding) 40px;
+}
+
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer__brand {
+  max-width: 522px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.footer__brand .logo__name {
+  color: var(--color-white);
+}
+
+.footer__brand .logo__tag {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer__desc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 220px;
+}
+
+.footer__heading {
+  font-size: 16px;
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer__links a,
+.footer__links p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer__links a:hover {
+  color: var(--color-white);
+}
+
+.footer__link--accent {
+  font-weight: var(--fw-semibold);
+  color: var(--color-white) !important;
+}
+
+.footer__bottom {
+  margin-top: 64px;
+  font-size: 14px;
+  text-align: center;
+}

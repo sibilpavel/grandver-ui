@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Categories
+   ========================================================================== */
+.categories__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.category-card {
+  background: var(--color-purple-light);
+  border-radius: var(--radius-lg);
+  padding: 34px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  cursor: pointer;
+}
+
+.category-card:hover {
+  box-shadow: 0 10px 24px rgba(79, 70, 124, 0.18);
+  transform: translateY(-3px);
+}
+
+.category-card:hover .btn--round {
+  background: var(--color-white);
+  transform: rotate(45deg);
+}
+
+.category-card__title {
+  font-size: 22px;
+  font-weight: var(--fw-semibold);
+  margin-bottom: 6px;
+}
+
+.category-card__text {
+  font-size: 16px;
+  color: var(--color-text-80);
+  line-height: 1.4;
+}
