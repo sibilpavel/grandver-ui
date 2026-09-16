@@ -19,8 +19,14 @@
 }
 
 .course-card__image {
+  display: block;
   height: 180px;
   position: relative;
+}
+
+.course-card__title-link {
+  display: block;
+  color: inherit;
 }
 
 .course-card__image img {

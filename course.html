@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Как справиться с тревогой и стрессом — Курсы | GrandVer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/catalog.css">
+<link rel="stylesheet" href="css/course-card.css">
+<link rel="stylesheet" href="css/course-page.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ==========================================================================
+     HEADER
+     ========================================================================== -->
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo">
+      <img src="/assets/img/logo/logo.svg" alt="Логотип">
+    </a>
+
+    <div class="header__right">
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Главная</a>
+        <a href="courses.html" class="nav__link is-active">Курсы</a>
+        <a href="index.html#books" class="nav__link">Книги</a>
+      </nav>
+
+      <div class="header__actions">
+        <svg class="icon-btn icon-btn--search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
+        </svg>
+        <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/>
+          <path d="M2 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/>
+        </svg>
+        <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+        </svg>
+      </div>
+
+      <svg id="burgerBtn" class="burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ==========================================================================
+     MOBILE MENU
+     ========================================================================== -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu__top">
+    <span class="mobile-menu__title">Меню</span>
+    <svg id="closeMenuBtn" class="mobile-menu__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </div>
+  <label class="mobile-search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    <input type="text" placeholder="Поиск">
+  </label>
+  <nav class="mobile-nav">
+    <a href="index.html" class="mobile-nav__link">Главная</a>
+    <a href="courses.html" class="mobile-nav__link is-active">Курсы</a>
+    <a href="index.html#books" class="mobile-nav__link">Книги</a>
+  </nav>
+</div>
+
+<main>
+
+  <!-- ========================================================================
+       HERO — карточка курса
+       ======================================================================== -->
+  <section class="section" style="padding-bottom:0;">
+
+    <div class="breadcrumbs">
+      <a href="index.html">Главная</a>
+      <span>&gt;</span>
+      <a href="courses.html">Курсы</a>
+      <span>&gt;</span>
+      <span class="breadcrumbs__current">Как справиться с тревогой и стрессом</span>
+    </div>
+
+    <div class="course-hero">
+      <div class="course-hero__image">
+        <img src="https://picsum.photos/seed/course-1/900/700" alt="Как справиться с тревогой и стрессом">
+      </div>
+
+      <div class="course-hero__info">
+        <div class="course-hero__top">
+          <div class="course-hero__heading">
+            <div class="course-hero__badges">
+              <span class="chip">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l3 1.5"/></svg>
+                2 ч 45 мин
+              </span>
+              <span class="chip chip--pink">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 6c-1.8-1.2-4-2-6-2v13c2 0 4.2.8 6 2m0-13c1.8-1.2 4-2 6-2v13c-2 0-4.2.8-6 2m0-13v13"/></svg>
+                12 уроков
+              </span>
+            </div>
+            <h1 class="course-hero__title">Как справиться с тревогой и стрессом</h1>
+            <p class="course-hero__desc">Практический курс, направленный на борьбу с тревожностью и стрессом.</p>
+          </div>
+
+          <div class="course-hero__rating">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+            <span class="rating__value">4.8</span>
+            <span class="rating__count">(41 отзыв)</span>
+          </div>
+
+          <a href="#author" class="course-hero__author" data-tab-link="author">
+            <span class="course-hero__author-photo">
+              <img src="https://picsum.photos/seed/author-ivan/160/160" alt="Иван Петров">
+            </span>
+            <span>
+              <p class="course-hero__author-name">Иван Петров</p>
+              <p class="course-hero__author-role">Клинический психолог, психотерапевт</p>
+            </span>
+          </a>
+        </div>
+
+        <div class="course-hero__buy">
+          <p class="course-hero__price">39€</p>
+          <button type="button" class="course-hero__buy-btn">Купить курс</button>
+          <div class="course-hero__actions">
+            <button type="button" class="course-hero__action">
+              В избранное
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-8.5C.8 9 2 5 5.5 5c2 0 3.5 1.2 4.5 3 1-1.8 2.5-3 4.5-3 3.5 0 4.7 4 3 7.5C19 16.65 12 21 12 21z"/></svg>
+            </button>
+            <button type="button" class="course-hero__action">
+              Поделиться
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 10.5l6.8-3.9M8.6 13.5l6.8 3.9"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       ТАБЫ + КОНТЕНТ КУРСА
+       ======================================================================== -->
+  <section class="section">
+    <div style="display:flex; flex-direction:column; gap:24px; width:100%;">
+
+      <div class="tabs">
+        <span class="tabs__link is-active" data-tab="description">Описание</span>
+        <span class="tabs__link" data-tab="program">Программа курса</span>
+        <span class="tabs__link" data-tab="author">Автор</span>
+        <span class="tabs__link" data-tab="reviews">Отзывы (41)</span>
+        <span class="tabs__link" data-tab="faq">FAQ</span>
+      </div>
+
+      <!-- ===== Описание ===== -->
+      <div class="tab-panel is-active" data-tab="description">
+        <div class="course-layout">
+          <div class="course-layout__main">
+            <div class="about">
+              <h2 class="about__title">О курсе</h2>
+              <p class="about__text">Этот практический курс разработан практикующими специалистами, чтобы помочь вам глубже понять механизмы возникновения тревожных состояний и стресса, а также овладеть действенными инструментами саморегуляции для возвращения спокойствия и уверенности.</p>
+            </div>
+            <div class="checklist">
+              <p class="checklist__title">Вы научитесь</p>
+              <div class="checklist__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l6 6L20 6"/></svg>
+                Эффективные техники борьбы со стрессом
+              </div>
+              <div class="checklist__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l6 6L20 6"/></svg>
+                Осознанное дыхание и техники релаксации
+              </div>
+              <div class="checklist__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l6 6L20 6"/></svg>
+                Понимание основных триггеров личной тревоги
+              </div>
+              <div class="checklist__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l6 6L20 6"/></svg>
+                Построение внутренней психологической устойчивости
+              </div>
+            </div>
+          </div>
+
+          <aside class="course-sidebar">
+            <p class="course-sidebar__title">Что вы получите</p>
+            <div class="course-sidebar__list">
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5-6-3.5z" fill="currentColor" stroke="none"/></svg>
+                12 уроков
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>
+                Практические задания
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                Поддержка куратора курса
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                Доступ к курсу навсегда
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+                Рабочие файлы PDF
+              </div>
+            </div>
+            <button type="button" class="course-sidebar__buy">Купить курс за 39€</button>
+          </aside>
+        </div>
+      </div>
+
+      <!-- ===== Программа курса ===== -->
+      <div class="tab-panel" data-tab="program">
+        <div class="course-layout">
+          <div class="course-layout__main">
+            <div class="accordion">
+              <div class="accordion-item is-open">
+                <div class="accordion-item__head">
+                  <div class="accordion-item__heading">
+                    <span class="accordion-item__badge">Модуль 1</span>
+                    <p class="accordion-item__title">Понимание тревоги и стресса</p>
+                  </div>
+                  <svg class="accordion-item__toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+                <p class="accordion-item__body">Разберем биологические и психологические механизмы стресса. Узнаем, как наше тело реагирует на угрозы и как распознавать первые симптомы тревоги до того, как они перерастут в панику.</p>
+              </div>
+
+              <div class="accordion-item">
+                <div class="accordion-item__head">
+                  <div class="accordion-item__heading">
+                    <span class="accordion-item__badge">Модуль 2</span>
+                    <p class="accordion-item__title">Техники дыхания и релаксации</p>
+                  </div>
+                  <svg class="accordion-item__toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+                <p class="accordion-item__body">Освоим дыхательные практики и техники мышечной релаксации, которые помогают быстро снизить уровень тревоги в моменте.</p>
+              </div>
+
+              <div class="accordion-item">
+                <div class="accordion-item__head">
+                  <div class="accordion-item__heading">
+                    <span class="accordion-item__badge">Модуль 3</span>
+                    <p class="accordion-item__title">Работа с триггерами тревоги</p>
+                  </div>
+                  <svg class="accordion-item__toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+                <p class="accordion-item__body">Научимся распознавать личные триггеры тревожности и выстраивать стратегию заблаговременного реагирования.</p>
+              </div>
+
+              <div class="accordion-item">
+                <div class="accordion-item__head">
+                  <div class="accordion-item__heading">
+                    <span class="accordion-item__badge">Модуль 4</span>
+                    <p class="accordion-item__title">Практика и интеграция в жизнь</p>
+                  </div>
+                  <svg class="accordion-item__toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+                <p class="accordion-item__body">Закрепим полученные навыки на практике и составим личный план поддержания устойчивости на каждый день.</p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="course-sidebar">
+            <p class="course-sidebar__title">Что вы получите</p>
+            <div class="course-sidebar__list">
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5-6-3.5z" fill="currentColor" stroke="none"/></svg>
+                12 уроков
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>
+                Практические задания
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                Поддержка куратора курса
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                Доступ к курсу навсегда
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+                Рабочие файлы PDF
+              </div>
+            </div>
+            <button type="button" class="course-sidebar__buy">Купить курс за 39€</button>
+          </aside>
+        </div>
+      </div>
+
+      <!-- ===== Автор ===== -->
+      <div class="tab-panel" data-tab="author">
+        <div class="course-layout">
+          <div class="course-layout__main">
+            <div class="author-block">
+              <span class="author-block__photo">
+                <img src="https://picsum.photos/seed/author-ivan/400/400" alt="Иван Петров">
+              </span>
+              <div class="author-block__info">
+                <div class="author-block__head">
+                  <div class="author-block__name-row">
+                    <p class="author-block__name">Иван Петров</p>
+                    <span class="author-block__badge">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                      12 лет опыта
+                    </span>
+                  </div>
+                  <p class="author-block__role">Клинический психолог, психотерапевт</p>
+                </div>
+                <p class="author-block__bio">Специализируется на когнитивно-поведенческой терапии и управлении стрессовыми состояниями. За время своей практики помог более чем 2000 клиентам справиться с тревожностью, профессиональным выгоранием и восстановить ментальный баланс в личной и деловой жизни.</p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="course-sidebar">
+            <p class="course-sidebar__title">Что вы получите</p>
+            <div class="course-sidebar__list">
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5-6-3.5z" fill="currentColor" stroke="none"/></svg>
+                12 уроков
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>
+                Практические задания
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                Поддержка куратора курса
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                Доступ к курсу навсегда
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+                Рабочие файлы PDF
+              </div>
+            </div>
+            <button type="button" class="course-sidebar__buy">Купить курс за 39€</button>
+          </aside>
+        </div>
+      </div>
+
+      <!-- ===== Отзывы ===== -->
+      <div class="tab-panel" data-tab="reviews">
+        <div class="course-layout">
+          <div class="course-layout__main">
+            <div class="reviews">
+              <p class="reviews__title">Отзывы</p>
+
+              <div class="reviews-top">
+                <div class="reviews-score">
+                  <p class="reviews-score__value">4.8/5</p>
+                  <div class="reviews-score__stars">
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                  </div>
+                  <p class="reviews-score__count">41 отзыв</p>
+                </div>
+
+                <div class="reviews-breakdown">
+                  <div class="reviews-breakdown__row">
+                    <span class="reviews-breakdown__num">5</span>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                    <span class="reviews-breakdown__bar"><span style="width:83%;"></span></span>
+                    <span class="reviews-breakdown__count">34</span>
+                  </div>
+                  <div class="reviews-breakdown__row">
+                    <span class="reviews-breakdown__num">4</span>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                    <span class="reviews-breakdown__bar"><span style="width:17%;"></span></span>
+                    <span class="reviews-breakdown__count">7</span>
+                  </div>
+                  <div class="reviews-breakdown__row">
+                    <span class="reviews-breakdown__num">3</span>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                    <span class="reviews-breakdown__bar"><span style="width:0%;"></span></span>
+                    <span class="reviews-breakdown__count">0</span>
+                  </div>
+                  <div class="reviews-breakdown__row">
+                    <span class="reviews-breakdown__num">2</span>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                    <span class="reviews-breakdown__bar"><span style="width:0%;"></span></span>
+                    <span class="reviews-breakdown__count">0</span>
+                  </div>
+                  <div class="reviews-breakdown__row">
+                    <span class="reviews-breakdown__num">1</span>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                    <span class="reviews-breakdown__bar"><span style="width:0%;"></span></span>
+                    <span class="reviews-breakdown__count">0</span>
+                  </div>
+                </div>
+
+                <form class="review-form" onsubmit="return false;">
+                  <div class="review-form__head">
+                    <p class="review-form__head-title">Оцените наш курс!</p>
+                    <div class="review-form__stars">
+                      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                    </div>
+                  </div>
+                  <textarea placeholder="Ваш комментарий"></textarea>
+                  <button type="submit" class="review-form__submit">Отправить отзыв</button>
+                </form>
+              </div>
+
+              <div class="review-list">
+                <article class="review-item">
+                  <div class="review-item__head">
+                    <div class="review-item__user">
+                      <span class="review-item__avatar"><img src="https://picsum.photos/seed/reviewer-1/160/160" alt="Александра Белова"></span>
+                      <div class="review-item__meta">
+                        <p class="review-item__name">Александра Белова</p>
+                        <div class="review-item__stars">
+                          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                        </div>
+                      </div>
+                    </div>
+                    <svg class="review-item__quote" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7c-2.2 0-4 1.8-4 4v6h6v-6H6c0-1.1.9-2 2-2V7zm10 0c-2.2 0-4 1.8-4 4v6h6v-6h-3c0-1.1.9-2 2-2V7z"/></svg>
+                  </div>
+                  <p class="review-item__text">Потрясающий курс! Очень доступно изложена теория, а практические дыхательные практики теперь со мной каждый день. Действительно чувствую себя гораздо спокойнее.</p>
+                  <p class="review-item__date">12.03.2026</p>
+                </article>
+
+                <article class="review-item">
+                  <div class="review-item__head">
+                    <div class="review-item__user">
+                      <span class="review-item__avatar"><img src="https://picsum.photos/seed/reviewer-1/160/160" alt="Александра Белова"></span>
+                      <div class="review-item__meta">
+                        <p class="review-item__name">Александра Белова</p>
+                        <div class="review-item__stars">
+                          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                        </div>
+                      </div>
+                    </div>
+                    <svg class="review-item__quote" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7c-2.2 0-4 1.8-4 4v6h6v-6H6c0-1.1.9-2 2-2V7zm10 0c-2.2 0-4 1.8-4 4v6h6v-6h-3c0-1.1.9-2 2-2V7z"/></svg>
+                  </div>
+                  <p class="review-item__text">Потрясающий курс! Очень доступно изложена теория, а практические дыхательные практики теперь со мной каждый день. Действительно чувствую себя гораздо спокойнее.</p>
+                  <p class="review-item__date">12.03.2026</p>
+                </article>
+
+                <article class="review-item">
+                  <div class="review-item__head">
+                    <div class="review-item__user">
+                      <span class="review-item__avatar"><img src="https://picsum.photos/seed/reviewer-1/160/160" alt="Александра Белова"></span>
+                      <div class="review-item__meta">
+                        <p class="review-item__name">Александра Белова</p>
+                        <div class="review-item__stars">
+                          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                        </div>
+                      </div>
+                    </div>
+                    <svg class="review-item__quote" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7c-2.2 0-4 1.8-4 4v6h6v-6H6c0-1.1.9-2 2-2V7zm10 0c-2.2 0-4 1.8-4 4v6h6v-6h-3c0-1.1.9-2 2-2V7z"/></svg>
+                  </div>
+                  <p class="review-item__text">Прекрасная подача материала — коротко, по делу и сразу с практикой. Уже после первого модуля стало легче справляться с тревожными мыслями.</p>
+                  <p class="review-item__date">12.03.2026</p>
+                </article>
+
+                <article class="review-item">
+                  <div class="review-item__head">
+                    <div class="review-item__user">
+                      <span class="review-item__avatar"><img src="https://picsum.photos/seed/reviewer-1/160/160" alt="Александра Белова"></span>
+                      <div class="review-item__meta">
+                        <p class="review-item__name">Александра Белова</p>
+                        <div class="review-item__stars">
+                          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                        </div>
+                      </div>
+                    </div>
+                    <svg class="review-item__quote" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7c-2.2 0-4 1.8-4 4v6h6v-6H6c0-1.1.9-2 2-2V7zm10 0c-2.2 0-4 1.8-4 4v6h6v-6h-3c0-1.1.9-2 2-2V7z"/></svg>
+                  </div>
+                  <p class="review-item__text">Куратор очень отзывчивый, отвечает быстро и по делу. Рекомендую всем, кто хочет разобраться со своей тревожностью системно.</p>
+                  <p class="review-item__date">12.03.2026</p>
+                </article>
+              </div>
+
+              <a href="#" class="btn btn--text reviews__more">
+                Показать больше
+                <svg class="btn__icon" viewBox="0 0 10 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 1v10M1.5 8L5 11l3.5-3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <aside class="course-sidebar">
+            <p class="course-sidebar__title">Что вы получите</p>
+            <div class="course-sidebar__list">
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5-6-3.5z" fill="currentColor" stroke="none"/></svg>
+                12 уроков
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>
+                Практические задания
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                Поддержка куратора курса
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                Доступ к курсу навсегда
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+                Рабочие файлы PDF
+              </div>
+            </div>
+            <button type="button" class="course-sidebar__buy">Купить курс за 39€</button>
+          </aside>
+        </div>
+      </div>
+
+      <!-- ===== FAQ ===== -->
+      <div class="tab-panel" data-tab="faq">
+        <div class="course-layout">
+          <div class="course-layout__main">
+            <div class="faq">
+              <p class="faq__title">Часто задаваемые вопросы</p>
+              <div class="accordion">
+                <div class="accordion-item is-open">
+                  <div class="accordion-item__head">
+                    <p class="accordion-item__title" style="flex:1;">Как проходит обучение?</p>
+                    <svg class="accordion-item__toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </div>
+                  <p class="accordion-item__body">Курс проходит в удобном для вас темпе: видеоуроки доступны сразу после покупки, к каждому модулю прилагаются практические задания, а куратор отвечает на вопросы в личном кабинете.</p>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-item__head">
+                    <p class="accordion-item__title" style="flex:1;">Есть ли сертификат?</p>
+                    <svg class="accordion-item__toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </div>
+                  <p class="accordion-item__body">Да, после завершения всех модулей и практических заданий вы получите именной сертификат о прохождении курса.</p>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-item__head">
+                    <p class="accordion-item__title" style="flex:1;">Нужна ли подготовка?</p>
+                    <svg class="accordion-item__toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </div>
+                  <p class="accordion-item__body">Нет, курс рассчитан на любой уровень подготовки — все объясняется простым языком, с примерами из жизни.</p>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-item__head">
+                    <p class="accordion-item__title" style="flex:1;">Как долго доступен курс?</p>
+                    <svg class="accordion-item__toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </div>
+                  <p class="accordion-item__body">Доступ к материалам курса сохраняется навсегда — вы сможете возвращаться к урокам в любое удобное время.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="course-sidebar">
+            <p class="course-sidebar__title">Что вы получите</p>
+            <div class="course-sidebar__list">
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5-6-3.5z" fill="currentColor" stroke="none"/></svg>
+                12 уроков
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>
+                Практические задания
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                Поддержка куратора курса
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                Доступ к курсу навсегда
+              </div>
+              <div class="course-sidebar__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+                Рабочие файлы PDF
+              </div>
+            </div>
+            <button type="button" class="course-sidebar__buy">Купить курс за 39€</button>
+          </aside>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       СОПУТСТВУЮЩИЕ ТОВАРЫ
+       ======================================================================== -->
+  <section class="section related">
+    <div class="related__head">
+      <h2 class="related__title">Сопутствующие товары</h2>
+      <a href="courses.html" class="btn btn--text">
+        Смотреть все
+        <svg class="btn__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg>
+      </a>
+    </div>
+
+    <div class="h-scroll">
+
+      <article class="course-card">
+        <a href="course.html" class="course-card__image"><img src="https://picsum.photos/seed/course-1/400/300" alt="Как справиться с тревогой и стрессом"></a>
+        <div class="course-card__body">
+          <div>
+            <div class="course-card__top">
+              <span class="chip">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l3 1.5"/></svg>
+                2 ч 45 мин
+              </span>
+              <span class="rating">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                4.8
+              </span>
+            </div>
+            <a href="course.html" class="course-card__title-link"><p class="course-card__title">Как справиться с тревогой и стрессом</p></a>
+            <p class="course-card__author">Иван Петров</p>
+          </div>
+          <div class="course-card__footer">
+            <span class="course-card__price">39€</span>
+            <a href="course.html" class="btn btn--text">Посмотреть
+              <svg class="btn__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="course-card">
+        <a href="course.html" class="course-card__image"><img src="https://picsum.photos/seed/course-2/400/300" alt="Эмоциональный интеллект в жизни и работе"></a>
+        <div class="course-card__body">
+          <div>
+            <div class="course-card__top">
+              <span class="chip">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l3 1.5"/></svg>
+                3 ч 10 мин
+              </span>
+              <span class="rating">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                4.9
+              </span>
+            </div>
+            <a href="course.html" class="course-card__title-link"><p class="course-card__title">Эмоциональный интеллект в жизни и работе</p></a>
+            <p class="course-card__author">Марина Иванова</p>
+          </div>
+          <div class="course-card__footer">
+            <span class="course-card__price">49€</span>
+            <a href="course.html" class="btn btn--text">Посмотреть
+              <svg class="btn__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="course-card">
+        <a href="course.html" class="course-card__image"><img src="https://picsum.photos/seed/course-3/400/300" alt="Сон и бессоница. Практический подход"></a>
+        <div class="course-card__body">
+          <div>
+            <div class="course-card__top">
+              <span class="chip">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l3 1.5"/></svg>
+                1 ч 20 мин
+              </span>
+              <span class="rating">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                4.6
+              </span>
+            </div>
+            <a href="course.html" class="course-card__title-link"><p class="course-card__title">Сон и бессоница. Практический подход</p></a>
+            <p class="course-card__author">Алексей Смирнов</p>
+          </div>
+          <div class="course-card__footer">
+            <span class="course-card__price">36€</span>
+            <a href="course.html" class="btn btn--text">Посмотреть
+              <svg class="btn__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="course-card">
+        <a href="course.html" class="course-card__image"><img src="https://picsum.photos/seed/course-4/400/300" alt="Привычки, которые меняют жизнь"></a>
+        <div class="course-card__body">
+          <div>
+            <div class="course-card__top">
+              <span class="chip">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l3 1.5"/></svg>
+                2 ч 45 мин
+              </span>
+              <span class="rating">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>
+                4.8
+              </span>
+            </div>
+            <a href="course.html" class="course-card__title-link"><p class="course-card__title">Привычки, которые меняют жизнь</p></a>
+            <p class="course-card__author">Иван Петров</p>
+          </div>
+          <div class="course-card__footer">
+            <span class="course-card__price">29€</span>
+            <a href="course.html" class="btn btn--text">Посмотреть
+              <svg class="btn__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <div class="dots">
+      <span class="dot dot--active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==========================================================================
+     FOOTER
+     ========================================================================== -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <span class="logo__text">
+        <img src="/assets/img/logo/logo-footer.svg" height="50" width="168" alt="Логотип">
+      </span>
+      <p class="footer__desc">Мы создаем качественный образовательный контент, помогающий находить ответы на внутренние вопросы и совершенствовать навыки.</p>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__heading">Меню</h4>
+      <div class="footer__links">
+        <a href="index.html">Главная</a>
+        <a href="courses.html">Курсы</a>
+        <a href="index.html#books">Книги</a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__heading">Контакты</h4>
+      <div class="footer__links">
+        <p>+371 28700566</p>
+        <p>info@grandver.com</p>
+        <p>Brīvības gatve 214b, Rīga, LV-1039</p>
+        <a href="#" class="footer__link--accent">grandver.com</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer__bottom">© 2026 Учебный центр GrandVer. Все права защищены.</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Клик по мини-карточке автора в шапке курса переключает на таб "Автор".
+  document.querySelectorAll('[data-tab-link]').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = el.dataset.tabLink;
+      document.querySelectorAll('.tabs__link').forEach((t) => t.classList.toggle('is-active', t.dataset.tab === target));
+      document.querySelectorAll('.tab-panel').forEach((p) => p.classList.toggle('is-active', p.dataset.tab === target));
+      document.querySelector('.tabs')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body>
+</html>

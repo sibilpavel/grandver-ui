@@ -10,6 +10,15 @@
   margin-bottom: 24px;
 }
 
+.breadcrumbs a {
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumbs a:hover {
+  color: var(--color-purple);
+}
+
 .breadcrumbs__current {
   color: var(--color-purple);
   font-weight: var(--fw-semibold);

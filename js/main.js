@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initFilterDrawer();
   initScrollDots();
+  initCourseTabs();
+  initAccordions();
+  initReviewStars();
 });
 
 /**
@@ -111,5 +114,56 @@ function initScrollDots() {
     }, { passive: true });
 
     updateActiveDot();
+  });
+}
+
+/**
+ * Табы на странице курса (Описание / Программа курса / Автор / Отзывы / FAQ).
+ * Переключение происходит без перезагрузки страницы, каждому табу
+ * соответствует панель с тем же data-tab.
+ */
+function initCourseTabs() {
+  const tabs = document.querySelectorAll('.tabs__link');
+  const panels = document.querySelectorAll('.tab-panel');
+
+  if (!tabs.length || !panels.length) return;
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+
+      tabs.forEach((t) => t.classList.toggle('is-active', t === tab));
+      panels.forEach((panel) => panel.classList.toggle('is-active', panel.dataset.tab === target));
+
+      tab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    });
+  });
+}
+
+/**
+ * Аккордеон для модулей курса и FAQ. Клик по заголовку раскрывает/
+ * скрывает описание, стрелка поворачивается через CSS-класс is-open.
+ */
+function initAccordions() {
+  document.querySelectorAll('.accordion-item__head').forEach((head) => {
+    head.addEventListener('click', () => {
+      head.closest('.accordion-item')?.classList.toggle('is-open');
+    });
+  });
+}
+
+/**
+ * Интерактивный выбор оценки в форме отзыва — клик по звезде
+ * закрашивает её и все предыдущие.
+ */
+function initReviewStars() {
+  document.querySelectorAll('.review-form__stars').forEach((group) => {
+    const stars = Array.from(group.querySelectorAll('svg'));
+
+    stars.forEach((star, index) => {
+      star.addEventListener('click', () => {
+        stars.forEach((s, i) => s.classList.toggle('is-filled', i <= index));
+      });
+    });
   });
 }

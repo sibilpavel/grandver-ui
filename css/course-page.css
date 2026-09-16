@@ -1,0 +1,861 @@
+/* ==========================================================================
+   Course page — hero, tabs, sidebar, modules/FAQ accordion, reviews
+   ========================================================================== */
+
+/* ---- Hero (top course card) ------------------------------------------- */
+.course-hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+.course-hero__image {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 738 / 551;
+}
+
+.course-hero__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.course-hero__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(19, 6, 45, 0.1);
+}
+
+.course-hero__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 36px;
+}
+
+.course-hero__top {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.course-hero__badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.chip--pink {
+  background: var(--color-pink-bg);
+}
+
+.course-hero__badges .chip {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.course-hero__badges .chip svg {
+  width: 18px;
+  height: 18px;
+}
+
+.course-hero__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.course-hero__title {
+  font-size: clamp(22px, 2.6vw, 28px);
+  font-weight: var(--fw-medium);
+  line-height: 1.3;
+}
+
+.course-hero__desc {
+  font-size: 16px;
+  color: var(--color-text-80);
+  line-height: 1.5;
+}
+
+.course-hero__rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.course-hero__rating svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-star);
+}
+
+.course-hero__rating .rating__value {
+  font-size: 16px;
+  color: var(--color-text);
+  margin-left: 4px;
+}
+
+.course-hero__rating .rating__count {
+  font-size: 16px;
+  color: var(--color-text-60);
+}
+
+.course-hero__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-grey-input);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  color: inherit;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.course-hero__author:hover {
+  background: var(--color-purple-light);
+}
+
+.course-hero__author-photo {
+  width: 74px;
+  height: 74px;
+  border-radius: 50px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.course-hero__author-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.course-hero__author-name {
+  font-size: 22px;
+  font-weight: var(--fw-medium);
+}
+
+.course-hero__author-role {
+  font-size: 16px;
+  color: var(--color-text-80);
+}
+
+.course-hero__buy {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.course-hero__price {
+  font-size: 30px;
+  font-weight: var(--fw-semibold);
+}
+
+.course-hero__buy-btn {
+  width: 100%;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--color-purple);
+  color: var(--color-white);
+  font-weight: var(--fw-medium);
+  font-size: 16px;
+}
+
+.course-hero__actions {
+  display: flex;
+  gap: 12px;
+}
+
+.course-hero__action {
+  flex: 1;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--color-purple-light);
+  color: var(--color-purple);
+  font-weight: var(--fw-medium);
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.course-hero__action svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ---- Tabs --------------------------------------------------------------- */
+.tabs {
+  display: flex;
+  gap: 48px;
+  width: 100%;
+  border-bottom: 2px solid var(--color-grey-input);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs__link {
+  flex-shrink: 0;
+  padding-bottom: 12px;
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-60);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.tabs__link:hover {
+  color: var(--color-text);
+}
+
+.tabs__link.is-active {
+  color: var(--color-text);
+  font-weight: var(--fw-medium);
+  border-color: var(--color-purple);
+}
+
+/* ---- Tab panels + layout ------------------------------------------------ */
+.tab-panel {
+  display: none;
+  width: 100%;
+}
+
+.tab-panel.is-active {
+  display: block;
+}
+
+.course-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+}
+
+.course-layout__main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ---- Sidebar: "Что вы получите" ----------------------------------------- */
+.course-sidebar {
+  width: 306px;
+  flex-shrink: 0;
+  background: var(--color-pink-bg);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.course-sidebar__title {
+  font-size: 22px;
+  font-weight: var(--fw-medium);
+}
+
+.course-sidebar__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.course-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  color: var(--color-text-80);
+}
+
+.course-sidebar__item svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-purple);
+  flex-shrink: 0;
+}
+
+.course-sidebar__buy {
+  width: 100%;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--color-purple);
+  color: var(--color-white);
+  font-weight: var(--fw-medium);
+  font-size: 16px;
+}
+
+/* ---- Description tab: about + checklist --------------------------------- */
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about__title {
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: var(--fw-medium);
+}
+
+.about__text {
+  font-size: 16px;
+  color: var(--color-text-80);
+  line-height: 1.5;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checklist__title {
+  font-size: 22px;
+  font-weight: var(--fw-medium);
+}
+
+.checklist__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  color: var(--color-text-80);
+}
+
+.checklist__item svg {
+  width: 22px;
+  height: 22px;
+  color: var(--color-purple);
+  flex-shrink: 0;
+}
+
+/* ---- Accordion (used for course modules + FAQ) --------------------------- */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.accordion-item {
+  background: var(--color-grey-input);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.accordion-item__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.accordion-item__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.accordion-item__badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  background: var(--color-purple-light);
+  color: var(--color-purple);
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+}
+
+.accordion-item__title {
+  font-size: 22px;
+  font-weight: var(--fw-medium);
+  line-height: 1.3;
+}
+
+.accordion-item__toggle {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  color: var(--color-text-60);
+  transition: transform var(--transition-base), color var(--transition-base);
+}
+
+.accordion-item.is-open .accordion-item__toggle {
+  transform: rotate(180deg);
+  color: var(--color-purple);
+}
+
+.accordion-item__body {
+  display: none;
+  font-size: 16px;
+  color: var(--color-text-80);
+  line-height: 1.5;
+}
+
+.accordion-item.is-open .accordion-item__body {
+  display: block;
+}
+
+/* ---- Author tab ----------------------------------------------------------- */
+.author-block {
+  display: flex;
+  gap: 24px;
+  background: var(--color-grey-input);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  width: 100%;
+}
+
+.author-block__photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 110px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.author-block__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-block__info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+  min-width: 0;
+}
+
+.author-block__head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.author-block__name-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.author-block__name {
+  font-size: 22px;
+  font-weight: var(--fw-medium);
+}
+
+.author-block__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-purple-light);
+  color: var(--color-purple);
+  font-size: 12px;
+  padding: 6px 8px;
+  border-radius: 4px;
+}
+
+.author-block__badge svg {
+  width: 16px;
+  height: 16px;
+}
+
+.author-block__role {
+  font-size: 16px;
+  color: var(--color-purple);
+}
+
+.author-block__bio {
+  font-size: 16px;
+  color: var(--color-text-80);
+  line-height: 1.5;
+}
+
+/* ---- Reviews tab ------------------------------------------------------------ */
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  align-items: center;
+}
+
+.reviews__title {
+  font-size: 28px;
+  font-weight: var(--fw-medium);
+}
+
+.reviews-top {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.reviews-score {
+  background: #fff8e8;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  width: 197px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.reviews-score__value {
+  font-size: 20px;
+  font-weight: var(--fw-medium);
+}
+
+.reviews-score__stars {
+  display: flex;
+  gap: 4px;
+}
+
+.reviews-score__stars svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-star);
+}
+
+.reviews-score__count {
+  font-size: 16px;
+  color: var(--color-text-80);
+}
+
+.reviews-breakdown {
+  background: var(--color-grey-input);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  width: 304px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+}
+
+.reviews-breakdown__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviews-breakdown__num {
+  width: 12px;
+  font-size: 16px;
+  font-weight: var(--fw-medium);
+}
+
+.reviews-breakdown__row svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-star);
+  flex-shrink: 0;
+}
+
+.reviews-breakdown__bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 20px;
+  background: var(--color-grey-btn);
+  overflow: hidden;
+}
+
+.reviews-breakdown__bar span {
+  display: block;
+  height: 100%;
+  border-radius: 20px;
+  background: #ffbb2a;
+}
+
+.reviews-breakdown__count {
+  width: 20px;
+  text-align: right;
+  font-size: 16px;
+  font-weight: var(--fw-medium);
+  color: var(--color-text-80);
+}
+
+.review-form {
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.review-form__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.review-form__head-title {
+  font-size: 20px;
+  font-weight: var(--fw-medium);
+}
+
+.review-form__stars {
+  display: flex;
+  gap: 4px;
+}
+
+.review-form__stars svg {
+  width: 28px;
+  height: 28px;
+  color: var(--color-grey-btn);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.review-form__stars svg:hover,
+.review-form__stars svg.is-filled {
+  color: var(--color-star);
+}
+
+.review-form textarea {
+  background: var(--color-grey-input);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  min-height: 110px;
+  width: 100%;
+  font-family: var(--font-main);
+  font-size: 14px;
+  color: var(--color-text);
+  resize: vertical;
+}
+
+.review-form textarea::placeholder {
+  color: var(--color-text-60);
+}
+
+.review-form__submit {
+  width: 100%;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--color-purple);
+  color: var(--color-white);
+  font-weight: var(--fw-medium);
+  font-size: 16px;
+}
+
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.review-item {
+  background: var(--color-grey-input);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.review-item__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.review-item__user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-item__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.review-item__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.review-item__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.review-item__name {
+  font-size: 20px;
+  font-weight: var(--fw-medium);
+}
+
+.review-item__stars {
+  display: flex;
+  gap: 2px;
+}
+
+.review-item__stars svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-star);
+}
+
+.review-item__quote {
+  width: 24px;
+  height: 24px;
+  color: var(--color-text-40);
+  flex-shrink: 0;
+}
+
+.review-item__text {
+  font-size: 16px;
+  color: var(--color-text-80);
+  line-height: 1.5;
+}
+
+.review-item__date {
+  font-size: 12px;
+  color: var(--color-text-60);
+}
+
+.reviews__more {
+  margin: 0 auto;
+}
+
+/* ---- FAQ tab --------------------------------------------------------------- */
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.faq__title {
+  font-size: 28px;
+  font-weight: var(--fw-medium);
+}
+
+/* ---- Related products ------------------------------------------------------- */
+.related {
+  background: var(--color-pink-bg);
+  width: 100%;
+}
+
+.related__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.related__title {
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .course-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .course-hero__image {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 900px) {
+  .course-layout {
+    flex-direction: column;
+  }
+
+  .course-sidebar {
+    width: 100%;
+  }
+
+  .author-block {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .author-block__name-row {
+    justify-content: center;
+  }
+
+  .reviews-top {
+    justify-content: center;
+  }
+
+  .reviews-score,
+  .reviews-breakdown {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .review-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    gap: 28px;
+  }
+
+  .course-hero__actions {
+    flex-direction: column;
+  }
+
+  .course-hero__author {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .accordion-item__title {
+    font-size: 18px;
+  }
+
+  .review-item__head {
+    flex-direction: column;
+  }
+
+  .review-item__quote {
+    align-self: flex-end;
+    margin-top: -32px;
+  }
+}
