@@ -12,18 +12,44 @@
   flex: 0 0 305px;
   width: 305px;
   align-items: center;
+
+  /* Плавность для трансформации и тени карточки */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
 }
 
+/* Эффект при наведении на саму карточку */
+.book-card:hover {
+  transform: translateY(-6px); /* Поднимает карточку */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12); /* Усиливает тень */
+}
+
+/* Контейнер для обложки (теперь с overflow: hidden) */
 .book-card__cover {
   width: 120px;
   height: 200px;
   flex-shrink: 0;
+  overflow: hidden; /* Скрывает вылезающую за края картинку при зуме */
+}
+
+/* Новая обертка для изображения внутри контейнера */
+.book-card__cover-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Убеждаемся, что изображение не выходит за пределы */
 }
 
 .book-card__cover img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Плавность увеличения обложки */
+  transition: transform 0.3s ease;
+}
+
+/* Плавный зум обложки при наведении на карточку */
+.book-card:hover .book-card__cover img {
+  transform: scale(1.05); /* Легкое увеличение изображения */
 }
 
 .book-card__body {
