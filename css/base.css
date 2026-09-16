@@ -66,46 +66,69 @@ body {
   flex-shrink: 0;
 }
 
+
 .btn--hero {
+  --hero-ring: clamp(56px, 7.2vw, 90px);
   position: relative;
-  gap: clamp(12px, 2vw, 18px);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1.5px solid rgba(255, 255, 255, 0.85);
-  padding: 8px 8px 8px clamp(20px, 3vw, 30px);
-  border-radius: var(--radius-pill);
+  gap: 0;
   color: var(--color-white);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  transition: background var(--transition-base), border-color var(--transition-base),
-    color var(--transition-base), transform var(--transition-fast),
-    box-shadow var(--transition-base);
 }
 
-.btn--hero:hover {
-  background: var(--color-white);
-  border-color: var(--color-white);
-  color: var(--color-purple-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(19, 6, 45, 0.28);
+.btn--hero__ring {
+  width: var(--hero-ring);
+  height: var(--hero-ring);
+  flex-shrink: 0;
+  color: inherit;
+  transition: transform var(--transition-base);
 }
 
-.btn--hero:active {
-  transform: translateY(0);
+.btn--hero__label {
+  /* 28/90 of the ring = how far the label sits from the ring's left
+     edge in the source file, pulled left over the ring by that much. */
+  margin-left: calc(var(--hero-ring) * -0.689);
+  padding-top: 2px;
+  transition: opacity var(--transition-base);
 }
 
-.btn--hero .ra-icon {
-  width: clamp(38px, 4.6vw, 50px);
-  height: clamp(32px, 3.9vw, 42px);
+.btn--hero__arrow {
+  width: calc(var(--hero-ring) * 0.478);
+  height: calc(var(--hero-ring) * 0.133);
+  /* 11/90 of the ring = gap between label and arrow in the source file */
+  margin-left: calc(var(--hero-ring) * 0.122);
+  flex-shrink: 0;
+  color: inherit;
+  transition: transform var(--transition-base);
+}
+
+.btn--hero:hover .btn--hero__ring {
+  transform: rotate(-18deg) scale(1.06);
+}
+
+.btn--hero:hover .btn--hero__arrow {
+  transform: translateX(10px);
+}
+
+.btn--hero:hover .btn--hero__label {
+  opacity: 0.85;
+}
+
+.btn--hero:active .btn--hero__arrow {
+  transform: translateX(4px);
 }
 
 /* Reusable "ring + arrow" icon: a circular outline broken by an arrow
-   that shoots out through the gap. Used on .btn--hero and .btn--round. */
+   that shoots out through the gap. Used on .btn--hero and .btn--round.
+   Sizing is locked down with !important + flex-grow:0 so that a global
+   "svg { width: 100% }"-style reset elsewhere on the page can't stretch
+   it across the whole button (this is what causes the ring and arrow
+   to split apart to opposite ends of the pill). */
 .ra-icon {
   display: block;
-  width: 50px;
-  height: 42px;
+  width: 50px !important;
+  height: 42px !important;
   overflow: visible;
   flex-shrink: 0;
+  flex-grow: 0;
 }
 
 .ra-icon__ring,
@@ -135,8 +158,8 @@ body {
 }
 
 .btn--round .ra-icon {
-  width: 50px;
-  height: 42px;
+  width: 50px !important;
+  height: 42px !important;
 }
 
 /* ==========================================================================
