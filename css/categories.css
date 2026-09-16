@@ -25,8 +25,15 @@
 }
 
 .category-card:hover .btn--round {
-  background: var(--color-white);
-  transform: rotate(45deg);
+  color: var(--color-purple-dark);
+}
+
+.category-card:hover .ra-icon__arrow {
+  transform: translateX(6px);
+}
+
+.category-card:hover .ra-icon__ring {
+  transform: rotate(-20deg);
 }
 
 .category-card__title {
