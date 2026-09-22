@@ -4,6 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
+  initAccountMenu();
   initFilterDrawer();
   initScrollDots();
   initCourseTabs();
@@ -36,6 +37,42 @@ function initMobileMenu() {
 
   // Закрываем меню при клике по любой ссылке внутри него
   menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', close));
+}
+
+/**
+ * Меню личного кабинета на мобильных (открывается по иконке профиля
+ * в шапке или по иконке рядом с заголовком «Мои курсы»): показывает
+ * аватар и разделы кабинета вместо прямого перехода на страницу.
+ * На десктопе иконка профиля просто ведёт на account.html.
+ */
+function initAccountMenu() {
+  const menu = document.getElementById('accountMenu');
+  const trigger = document.getElementById('accountMenuBtn');
+  const closeBtn = document.getElementById('closeAccountMenuBtn');
+  const accountLink = document.getElementById('accountLink');
+
+  if (!menu) return;
+
+  const open = () => {
+    menu.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const close = () => {
+    menu.classList.remove('is-open');
+    document.body.style.overflow = '';
+  };
+
+  trigger?.addEventListener('click', open);
+  closeBtn?.addEventListener('click', close);
+  menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', close));
+
+  accountLink?.addEventListener('click', (e) => {
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      e.preventDefault();
+      open();
+    }
+  });
 }
 
 /**

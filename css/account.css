@@ -1,0 +1,255 @@
+/* ==========================================================================
+   Личный кабинет
+   ========================================================================== */
+.account-hero .page-heading { margin-bottom: 24px; }
+
+.account-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+/* ---- Sidebar (desktop) / drawer content (mobile) ---- */
+.account-sidebar {
+  background: var(--color-white);
+  border-radius: 10px;
+  box-shadow: var(--shadow-toolbar);
+  padding: 20px;
+  width: 305px;
+  flex: 0 0 305px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-self: stretch;
+}
+
+.account-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.account-profile__photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.account-profile__name {
+  font-size: 16px;
+  font-weight: var(--fw-medium);
+  text-align: center;
+}
+
+.account-profile__email {
+  font-size: 14px;
+  color: var(--color-text-60);
+  text-align: center;
+}
+
+.account-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.account-nav__item {
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: var(--fw-medium);
+  color: var(--color-text-80);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.account-nav__item:hover {
+  background: var(--color-grey-bg);
+}
+
+.account-nav__item.is-active {
+  background: var(--color-purple-light);
+  color: var(--color-purple);
+}
+
+/* ---- Course cards ---- */
+.account-cards {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+}
+
+.account-card {
+  background: var(--color-white);
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  flex: 0 0 305px;
+  width: 305px;
+  display: flex;
+  flex-direction: column;
+}
+
+.account-card__image {
+  height: 180px;
+  position: relative;
+}
+
+.account-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.account-card__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(19, 6, 45, 0.2);
+}
+
+.account-card__body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+}
+
+/* Прогресс+кнопка прижимаются к низу карточки, даже если заголовок
+   курса короче и занимает не 2, а 1-3 строки у соседних карточек
+   (карточки одной высоты за счёт stretch в .account-cards). */
+.account-card__body .progress {
+  margin-top: auto;
+}
+
+.account-card__top {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.account-card__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.account-card__title {
+  font-size: 20px;
+  font-weight: var(--fw-medium);
+  line-height: 1.3;
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.progress__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.progress__label { color: var(--color-text-80); }
+
+.progress__value {
+  font-weight: var(--fw-medium);
+  color: var(--color-purple);
+}
+
+.progress__value.is-complete { color: #09B760; }
+
+.progress__track {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--color-purple-light);
+  overflow: hidden;
+}
+
+.progress__fill {
+  height: 100%;
+  border-radius: 10px;
+  background: var(--color-purple);
+}
+
+.progress__fill.is-complete { background: #09B760; }
+
+.btn--solid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 100%;
+  border-radius: 6px;
+  background: var(--color-purple);
+  color: var(--color-white);
+  font-weight: var(--fw-medium);
+  font-size: 16px;
+  transition: opacity var(--transition-fast);
+}
+
+.btn--solid:hover { opacity: 0.9; }
+
+.btn--outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 44px;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--color-purple);
+  color: var(--color-purple);
+  font-weight: var(--fw-medium);
+  font-size: 16px;
+  transition: background var(--transition-fast);
+}
+
+.btn--outline:hover { background: var(--color-purple-light); }
+
+/* ---- Mobile-only heading row above the card list ---- */
+.account-mobile-head {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.account-mobile-head__title {
+  font-size: 24px;
+  font-weight: var(--fw-semibold);
+}
+
+.account-menu-trigger {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+/* ---- Mobile drawer (reuses .mobile-menu overlay component) ---- */
+#accountMenu .account-sidebar {
+  width: 100%;
+  flex: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .account-layout { flex-direction: column; }
+  .account-layout > .account-sidebar { display: none; }
+  .account-cards { flex-direction: column; width: 100%; }
+  .account-card { width: 100%; flex: 1 1 auto; }
+  .account-card__image { height: 220px; }
+  .account-hero .breadcrumbs,
+  .account-hero .page-heading { display: none; }
+  .account-mobile-head { display: flex; }
+}

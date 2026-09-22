@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Личный кабинет — Мои курсы | GrandVer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/catalog.css">
+<link rel="stylesheet" href="css/course-card.css">
+<link rel="stylesheet" href="css/account.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ==========================================================================
+     HEADER
+     ========================================================================== -->
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo">
+      <img src="/assets/img/logo/logo.svg" alt="Логотип">
+    </a>
+
+    <div class="header__right">
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Главная</a>
+        <a href="courses.html" class="nav__link">Курсы</a>
+        <a href="index.html#books" class="nav__link">Книги</a>
+      </nav>
+
+      <div class="header__actions">
+        <svg class="icon-btn icon-btn--search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
+        </svg>
+        <a href="cart.html" aria-label="Корзина">
+          <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/>
+            <path d="M2 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/>
+          </svg>
+        </a>
+        <a href="account.html" id="accountLink" aria-label="Личный кабинет">
+          <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <svg id="burgerBtn" class="burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ==========================================================================
+     MOBILE MENU (site nav — burger)
+     ========================================================================== -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu__top">
+    <span class="mobile-menu__title">Меню</span>
+    <svg id="closeMenuBtn" class="mobile-menu__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </div>
+  <label class="mobile-search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    <input type="text" placeholder="Поиск">
+  </label>
+  <nav class="mobile-nav">
+    <a href="index.html" class="mobile-nav__link">Главная</a>
+    <a href="courses.html" class="mobile-nav__link">Курсы</a>
+    <a href="index.html#books" class="mobile-nav__link">Книги</a>
+  </nav>
+</div>
+
+<!-- ==========================================================================
+     ACCOUNT MENU (mobile drawer — выбор раздела кабинета)
+     ========================================================================== -->
+<div class="mobile-menu" id="accountMenu">
+  <div class="mobile-menu__top">
+    <span></span>
+    <svg id="closeAccountMenuBtn" class="mobile-menu__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </div>
+  <div class="account-sidebar">
+    <div class="account-profile">
+      <img class="account-profile__photo" src="https://i.pravatar.cc/160?img=13" alt="Александр Вертинский">
+      <p class="account-profile__name">Александр Вертинский</p>
+      <p class="account-profile__email">aleksandr@gmail.com</p>
+    </div>
+    <nav class="account-nav">
+      <a href="account.html" class="account-nav__item is-active">Мои курсы</a>
+      <a href="#" class="account-nav__item">Мои книги</a>
+      <a href="#" class="account-nav__item">Сертификаты</a>
+      <a href="#" class="account-nav__item">Счета</a>
+      <a href="#" class="account-nav__item">Избранное</a>
+      <a href="#" class="account-nav__item">Мой профиль</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+  <section class="section account-hero" style="background:var(--color-grey-bg); padding-bottom:60px;">
+
+    <!-- Breadcrumbs (desktop) -->
+    <div class="breadcrumbs">
+      <a href="index.html">Главная</a>
+      <span>&gt;</span>
+      <span class="breadcrumbs__current">Личный кабинет</span>
+    </div>
+
+    <!-- Page heading (desktop) -->
+    <div class="page-heading">
+      <h1 class="page-heading__title">Личный кабинет</h1>
+    </div>
+
+    <!-- Heading + menu trigger (mobile only) -->
+    <div class="account-mobile-head">
+      <span class="account-mobile-head__title">Мои курсы</span>
+      <svg id="accountMenuBtn" class="account-menu-trigger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </div>
+
+    <div class="account-layout">
+
+      <!-- Sidebar (desktop only) -->
+      <aside class="account-sidebar">
+        <div class="account-profile">
+          <img class="account-profile__photo" src="https://i.pravatar.cc/160?img=13" alt="Александр Вертинский">
+          <p class="account-profile__name">Александр Вертинский</p>
+          <p class="account-profile__email">aleksandr@gmail.com</p>
+        </div>
+        <nav class="account-nav">
+          <a href="account.html" class="account-nav__item is-active">Мои курсы</a>
+          <a href="#" class="account-nav__item">Мои книги</a>
+          <a href="#" class="account-nav__item">Сертификаты</a>
+          <a href="#" class="account-nav__item">Счета</a>
+          <a href="#" class="account-nav__item">Избранное</a>
+          <a href="#" class="account-nav__item">Мой профиль</a>
+        </nav>
+      </aside>
+
+      <!-- Course cards -->
+      <div class="account-cards">
+
+        <article class="account-card">
+          <a href="course.html" class="account-card__image"><img src="https://picsum.photos/seed/course-1/400/300" alt="Как справиться с тревогой и стрессом"></a>
+          <div class="account-card__body">
+            <div class="account-card__top">
+              <div class="account-card__row">
+                <span class="chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l3 1.5"/></svg>2 ч 45 мин</span>
+                <span class="rating"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>4.8</span>
+              </div>
+              <a href="course.html" class="course-card__title-link"><p class="account-card__title">Как справиться с тревогой и стрессом</p></a>
+              <p class="course-card__author">Иван Петров</p>
+            </div>
+            <div class="progress">
+              <div class="progress__row">
+                <span class="progress__label">Прогресс</span>
+                <span class="progress__value">65%</span>
+              </div>
+              <div class="progress__track"><div class="progress__fill" style="width:65%"></div></div>
+            </div>
+            <a href="course.html" class="btn--solid">Продолжить</a>
+          </div>
+        </article>
+
+        <article class="account-card">
+          <a href="course.html" class="account-card__image"><img src="https://picsum.photos/seed/course-2/400/300" alt="Эмоциональный интеллект в жизни и работе"></a>
+          <div class="account-card__body">
+            <div class="account-card__top">
+              <div class="account-card__row">
+                <span class="chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l3 1.5"/></svg>3 ч 10 мин</span>
+                <span class="rating"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>4.8</span>
+              </div>
+              <a href="course.html" class="course-card__title-link"><p class="account-card__title">Эмоциональный интеллект в жизни и работе</p></a>
+              <p class="course-card__author">Марина Иванова</p>
+            </div>
+            <div class="progress">
+              <div class="progress__row">
+                <span class="progress__label">Прогресс</span>
+                <span class="progress__value">20%</span>
+              </div>
+              <div class="progress__track"><div class="progress__fill" style="width:20%"></div></div>
+            </div>
+            <a href="course.html" class="btn--solid">Продолжить</a>
+          </div>
+        </article>
+
+        <article class="account-card">
+          <a href="course.html" class="account-card__image"><img src="https://picsum.photos/seed/course-3/400/300" alt="Сон и бессоница. Практический подход"></a>
+          <div class="account-card__body">
+            <div class="account-card__top">
+              <div class="account-card__row">
+                <span class="chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l3 1.5"/></svg>1 ч 20 мин</span>
+                <span class="rating"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.3l6.1-.7z"/></svg>4.8</span>
+              </div>
+              <a href="course.html" class="course-card__title-link"><p class="account-card__title">Сон и бессоница. Практический подход</p></a>
+              <p class="course-card__author">Алексей Смирнов</p>
+            </div>
+            <div class="progress">
+              <div class="progress__row">
+                <span class="progress__label">Прогресс</span>
+                <span class="progress__value is-complete">100%</span>
+              </div>
+              <div class="progress__track"><div class="progress__fill is-complete" style="width:100%"></div></div>
+            </div>
+            <a href="course.html" class="btn--outline">Посмотреть<svg class="btn__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ==========================================================================
+     FOOTER
+     ========================================================================== -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <span class="logo__text">
+        <img src="/assets/img/logo/logo-footer.svg" height="50" width="168" alt="Логотип">
+      </span>
+      <p class="footer__desc">Мы создаем качественный образовательный контент, помогающий находить ответы на внутренние вопросы и совершенствовать навыки.</p>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__heading">Меню</h4>
+      <div class="footer__links">
+        <a href="index.html">Главная</a>
+        <a href="courses.html">Курсы</a>
+        <a href="index.html#books">Книги</a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__heading">Контакты</h4>
+      <div class="footer__links">
+        <p>+371 28700566</p>
+        <p>info@grandver.com</p>
+        <p>Brīvības gatve 214b, Rīga, LV-1039</p>
+        <a href="#" class="footer__link--accent">grandver.com</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer__bottom">© 2026 Учебный центр GrandVer. Все права защищены.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
