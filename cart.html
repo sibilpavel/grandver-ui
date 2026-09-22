@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Корзина | GrandVer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/catalog.css">
+<link rel="stylesheet" href="css/cart.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ==========================================================================
+     HEADER
+     ========================================================================== -->
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo">
+      <img src="/assets/img/logo/logo.svg" alt="Логотип">
+    </a>
+
+    <div class="header__right">
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Главная</a>
+        <a href="courses.html" class="nav__link">Курсы</a>
+        <a href="index.html#books" class="nav__link">Книги</a>
+      </nav>
+
+      <div class="header__actions">
+        <svg class="icon-btn icon-btn--search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
+        </svg>
+        <a href="cart.html" aria-label="Корзина">
+          <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/>
+            <path d="M2 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/>
+          </svg>
+        </a>
+        <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+        </svg>
+      </div>
+
+      <svg id="burgerBtn" class="burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ==========================================================================
+     MOBILE MENU
+     ========================================================================== -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu__top">
+    <span class="mobile-menu__title">Меню</span>
+    <svg id="closeMenuBtn" class="mobile-menu__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </div>
+  <label class="mobile-search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    <input type="text" placeholder="Поиск">
+  </label>
+  <nav class="mobile-nav">
+    <a href="index.html" class="mobile-nav__link">Главная</a>
+    <a href="courses.html" class="mobile-nav__link">Курсы</a>
+    <a href="index.html#books" class="mobile-nav__link">Книги</a>
+  </nav>
+</div>
+
+<main>
+
+  <!-- ========================================================================
+       КОРЗИНА
+       ======================================================================== -->
+  <section class="section cart-page">
+
+    <div class="breadcrumbs">
+      <a href="index.html">Главная</a>
+      <span>&gt;</span>
+      <a href="courses.html">Курсы</a>
+      <span>&gt;</span>
+      <a href="course.html">Привычки, которые меняют жизнь</a>
+      <span>&gt;</span>
+      <span class="breadcrumbs__current">Корзина</span>
+    </div>
+
+    <h1 class="cart-page__title">Корзина</h1>
+
+    <div class="cart-layout">
+
+      <div class="cart-items">
+
+        <article class="cart-item">
+          <div class="cart-item__image">
+            <img src="https://picsum.photos/seed/course-4/240/270" alt="Курс «Привычки, которые меняют жизнь»">
+          </div>
+          <div class="cart-item__body">
+            <div class="cart-item__row">
+              <div class="cart-item__info">
+                <span class="chip">Видеокурс</span>
+                <p class="cart-item__title">Курс «Привычки, которые меняют жизнь»</p>
+              </div>
+              <button type="button" class="cart-item__remove" aria-label="Удалить из корзины">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 5.5h14M7.5 5.5V4a1.5 1.5 0 0 1 1.5-1.5h2A1.5 1.5 0 0 1 12.5 4v1.5M8 9.5v5M12 9.5v5M4.5 5.5l.7 9.6a2 2 0 0 0 2 1.9h5.6a2 2 0 0 0 2-1.9l.7-9.6"/></svg>
+              </button>
+            </div>
+            <p class="cart-item__author">Иван Крохов</p>
+            <p class="cart-item__price">29€</p>
+          </div>
+        </article>
+
+        <article class="cart-item">
+          <div class="cart-item__image">
+            <img src="https://picsum.photos/seed/course-2/240/270" alt="Курс «Эмоциональный интеллект в жизни и работе»">
+          </div>
+          <div class="cart-item__body">
+            <div class="cart-item__row">
+              <div class="cart-item__info">
+                <span class="chip">Видеокурс</span>
+                <p class="cart-item__title">Курс «Эмоциональный интеллект в жизни и работе»</p>
+              </div>
+              <button type="button" class="cart-item__remove" aria-label="Удалить из корзины">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 5.5h14M7.5 5.5V4a1.5 1.5 0 0 1 1.5-1.5h2A1.5 1.5 0 0 1 12.5 4v1.5M8 9.5v5M12 9.5v5M4.5 5.5l.7 9.6a2 2 0 0 0 2 1.9h5.6a2 2 0 0 0 2-1.9l.7-9.6"/></svg>
+              </button>
+            </div>
+            <p class="cart-item__author">Иван Петров</p>
+            <p class="cart-item__price">49€</p>
+          </div>
+        </article>
+
+      </div>
+
+      <aside class="cart-summary">
+        <div class="cart-summary__block">
+          <p class="cart-summary__title">Детали заказа</p>
+          <div class="cart-summary__rows">
+            <div class="cart-summary__row">
+              <span>Сумма товаров</span>
+              <span class="cart-summary__value">78€</span>
+            </div>
+            <div class="cart-summary__row">
+              <span>Скидка</span>
+              <span class="cart-summary__value">0€</span>
+            </div>
+            <div class="cart-summary__row">
+              <span>PVN</span>
+              <span class="cart-summary__value">2.50€</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cart-summary__promo">
+          <p class="cart-summary__promo-title">Промокод</p>
+          <div class="cart-summary__promo-row">
+            <label class="promo-input">
+              <input type="text" placeholder="Введите промокод">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11.6V5a2 2 0 0 1 2-2h6.6c.5 0 1 .2 1.4.6l8 8a2 2 0 0 1 0 2.8l-6.6 6.6a2 2 0 0 1-2.8 0l-8-8A2 2 0 0 1 3 11.6z"/><circle cx="8" cy="8" r="1.3"/></svg>
+            </label>
+            <button type="button" class="promo-apply">Применить</button>
+          </div>
+        </div>
+
+        <div class="cart-summary__total">
+          <span>Итого</span>
+          <span class="cart-summary__total-value">78€</span>
+        </div>
+
+        <a href="checkout.html" class="cart-summary__cta">Перейти к оплате</a>
+      </aside>
+
+    </div>
+
+  </section>
+
+</main>
+
+<!-- ==========================================================================
+     FOOTER
+     ========================================================================== -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <span class="logo__text">
+        <img src="/assets/img/logo/logo-footer.svg" height="50" width="168" alt="Логотип">
+      </span>
+      <p class="footer__desc">Мы создаем качественный образовательный контент, помогающий находить ответы на внутренние вопросы и совершенствовать навыки.</p>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__heading">Меню</h4>
+      <div class="footer__links">
+        <a href="index.html">Главная</a>
+        <a href="courses.html">Курсы</a>
+        <a href="index.html#books">Книги</a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__heading">Контакты</h4>
+      <div class="footer__links">
+        <p>+371 28700566</p>
+        <p>info@grandver.com</p>
+        <p>Brīvības gatve 214b, Rīga, LV-1039</p>
+        <a href="#" class="footer__link--accent">grandver.com</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer__bottom">© 2026 Учебный центр GrandVer. Все права защищены.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оформление заказа | GrandVer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/catalog.css">
+  <link rel="stylesheet" href="css/checkout.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ==========================================================================
+     HEADER
+     ========================================================================== -->
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo">
+      <img src="/assets/img/logo/logo.svg" alt="Логотип">
+    </a>
+
+    <div class="header__right">
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Главная</a>
+        <a href="courses.html" class="nav__link">Курсы</a>
+        <a href="index.html#books" class="nav__link">Книги</a>
+      </nav>
+
+      <div class="header__actions">
+        <svg class="icon-btn icon-btn--search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
+        </svg>
+        <a href="cart.html" aria-label="Корзина">
+          <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/>
+            <path d="M2 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/>
+          </svg>
+        </a>
+        <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+        </svg>
+      </div>
+
+      <svg id="burgerBtn" class="burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ==========================================================================
+     MOBILE MENU
+     ========================================================================== -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu__top">
+    <span class="mobile-menu__title">Меню</span>
+    <svg id="closeMenuBtn" class="mobile-menu__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </div>
+  <label class="mobile-search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    <input type="text" placeholder="Поиск">
+  </label>
+  <nav class="mobile-nav">
+    <a href="index.html" class="mobile-nav__link">Главная</a>
+    <a href="courses.html" class="mobile-nav__link">Курсы</a>
+    <a href="index.html#books" class="mobile-nav__link">Книги</a>
+  </nav>
+</div>
+
+<main>
+
+  <!-- ========================================================================
+       ОФОРМЛЕНИЕ ЗАКАЗА
+       ======================================================================== -->
+  <section class="section checkout-page">
+
+    <div class="breadcrumbs">
+      <a href="index.html">Главная</a>
+      <span>&gt;</span>
+      <a href="courses.html">Курсы</a>
+      <span>&gt;</span>
+      <a href="course.html">Привычки, которые меняют жизнь</a>
+      <span>&gt;</span>
+      <a href="cart.html">Корзина</a>
+      <span>&gt;</span>
+      <span class="breadcrumbs__current">Оформление заказа</span>
+    </div>
+
+    <h1 class="checkout-page__title">Оформление заказа</h1>
+
+    <div class="checkout-layout">
+
+      <div class="checkout-main">
+
+        <div class="checkout-card">
+          <div class="checkout-card__head checkout-card__head--split">
+            <p class="checkout-card__title">Тип покупателя</p>
+            <div class="buyer-toggle">
+              <button type="button" class="buyer-toggle__option is-active">Физическое лицо</button>
+              <button type="button" class="buyer-toggle__option">Юридическое лицо</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="checkout-card">
+          <p class="checkout-card__title">Данные покупателя</p>
+          <div class="checkout-form" id="buyerForm">
+            <div class="checkout-form__personal-fields">
+              <label class="form-field">
+                <span class="form-field__label">Имя и фамилия *</span>
+                <input type="text" placeholder="Введите ваше имя и фамилию">
+              </label>
+              <div class="form-row">
+                <label class="form-field">
+                  <span class="form-field__label">Email *</span>
+                  <input type="email" placeholder="example@email.com">
+                </label>
+                <label class="form-field">
+                  <span class="form-field__label">Телефон *</span>
+                  <input type="tel" placeholder="+371 XX XXX XXX">
+                </label>
+              </div>
+            </div>
+            <div class="checkout-form__legal-fields">
+              <label class="form-field">
+                <span class="form-field__label">Название компании *</span>
+                <input type="text" placeholder="ООО Компания">
+              </label>
+              <div class="form-row">
+                <label class="form-field">
+                  <span class="form-field__label">Регистрационный номер *</span>
+                  <input type="text" placeholder="00000000000">
+                </label>
+                <label class="form-field">
+                  <span class="form-field__label">НДС номер (при наличии)</span>
+                  <input type="text" placeholder="LV40000000000">
+                </label>
+              </div>
+              <label class="form-field">
+                <span class="form-field__label">Юридический адрес *</span>
+                <input type="text" placeholder="ул. Бривибас 214а, Рига, LV-1039">
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="checkout-card">
+          <p class="checkout-card__title">Способ оплаты</p>
+
+          <div class="payment-provider">
+            <div class="payment-provider__brand">
+              <span class="payment-provider__mark">Klix</span>
+              <span class="payment-provider__name">Klix Secure Pay</span>
+            </div>
+            <span class="chip">SSL Encrypted</span>
+          </div>
+
+          <div class="payment-methods">
+            <label class="payment-method is-active">
+              <span class="payment-method__info">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 9.5h19"/></svg>
+                Банковская карта
+              </span>
+              <input type="radio" name="payment" checked>
+            </label>
+            <label class="payment-method">
+              <span class="payment-method__info">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="2.5" width="16" height="19" rx="3"/><path d="M4 17.5h16"/></svg>
+                Apple Pay
+              </span>
+              <input type="radio" name="payment">
+            </label>
+            <label class="payment-method">
+              <span class="payment-method__info">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
+                Google Pay
+              </span>
+              <input type="radio" name="payment">
+            </label>
+            <label class="payment-method">
+              <span class="payment-method__info">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9.5 12 4l9 5.5"/><path d="M4.5 9.5v9M9.5 9.5v9M14.5 9.5v9M19.5 9.5v9"/><path d="M3 18.5h18"/></svg>
+                Интернет-банк
+              </span>
+              <input type="radio" name="payment">
+            </label>
+          </div>
+
+          <p class="payment-methods__note" id="invoiceNote" hidden>Оплата по счёту доступна для юридических лиц после проверки реквизитов</p>
+        </div>
+
+      </div>
+
+      <aside class="checkout-summary">
+        <div class="checkout-summary__block">
+          <p class="checkout-summary__title">Ваш заказ</p>
+          <div class="checkout-summary__items">
+            <div class="checkout-summary__item">
+              <div class="checkout-summary__item-info">
+                <span class="chip">Видеокурс</span>
+                <p class="checkout-summary__item-title">Эмоциональный интеллект в жизни и работе</p>
+              </div>
+              <span class="checkout-summary__item-price">49€</span>
+            </div>
+            <div class="checkout-summary__item">
+              <div class="checkout-summary__item-info">
+                <span class="chip">Видеокурс</span>
+                <p class="checkout-summary__item-title">Привычки, которые меняют жизнь</p>
+              </div>
+              <span class="checkout-summary__item-price">29€</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="checkout-summary__rows">
+          <div class="checkout-summary__row">
+            <span>Сумма товаров</span>
+            <span class="checkout-summary__value">78€</span>
+          </div>
+          <div class="checkout-summary__row">
+            <span>Скидка</span>
+            <span class="checkout-summary__value checkout-summary__value--accent">-6.30€</span>
+          </div>
+          <div class="checkout-summary__row">
+            <span>PVN</span>
+            <span class="checkout-summary__value">2.50€</span>
+          </div>
+        </div>
+
+        <div class="checkout-summary__promo">
+          <p class="checkout-summary__promo-title">Промокод</p>
+          <div class="checkout-summary__promo-row">
+            <label class="promo-input">
+              <input type="text" value="123456">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11.6V5a2 2 0 0 1 2-2h6.6c.5 0 1 .2 1.4.6l8 8a2 2 0 0 1 0 2.8l-6.6 6.6a2 2 0 0 1-2.8 0l-8-8A2 2 0 0 1 3 11.6z"/><circle cx="8" cy="8" r="1.3"/></svg>
+            </label>
+            <button type="button" class="promo-apply">Применить</button>
+          </div>
+          <div class="promo-applied">
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="7" cy="7" r="6"/><path d="M4.3 7.2l1.8 1.8 3.6-3.8"/></svg>
+            Скидка 10%: −6.30€
+          </div>
+        </div>
+
+        <div class="checkout-summary__total">
+          <span>Итого</span>
+          <span class="checkout-summary__total-value">71.70€</span>
+        </div>
+
+        <button type="button" class="checkout-summary__cta">Оплатить 71.70€</button>
+      </aside>
+
+    </div>
+
+  </section>
+
+</main>
+
+<!-- ==========================================================================
+     FOOTER
+     ========================================================================== -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <span class="logo__text">
+        <img src="/assets/img/logo/logo-footer.svg" height="50" width="168" alt="Логотип">
+      </span>
+      <p class="footer__desc">Мы создаем качественный образовательный контент, помогающий находить ответы на внутренние вопросы и совершенствовать навыки.</p>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__heading">Меню</h4>
+      <div class="footer__links">
+        <a href="index.html">Главная</a>
+        <a href="courses.html">Курсы</a>
+        <a href="index.html#books">Книги</a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__heading">Контакты</h4>
+      <div class="footer__links">
+        <p>+371 28700566</p>
+        <p>info@grandver.com</p>
+        <p>Brīvības gatve 214b, Rīga, LV-1039</p>
+        <a href="#" class="footer__link--accent">grandver.com</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer__bottom">© 2026 Учебный центр GrandVer. Все права защищены.</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Переключатель "Физическое лицо / Юридическое лицо"
+  const buyerForm = document.getElementById('buyerForm');
+  const invoiceNote = document.getElementById('invoiceNote');
+
+  document.querySelectorAll('.buyer-toggle').forEach((group) => {
+    group.querySelectorAll('.buyer-toggle__option').forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        group.querySelectorAll('.buyer-toggle__option').forEach((b) => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+
+        const isLegal = index === 1; // 0 = Физическое лицо, 1 = Юридическое лицо
+        buyerForm?.classList.toggle('is-legal', isLegal);
+        if (invoiceNote) invoiceNote.hidden = !isLegal;
+      });
+    });
+  });
+
+  // Выбор способа оплаты
+  document.querySelectorAll('.payment-method').forEach((label) => {
+    label.addEventListener('click', () => {
+      label.closest('.payment-methods')?.querySelectorAll('.payment-method')
+              .forEach((el) => el.classList.remove('is-active'));
+      label.classList.add('is-active');
+    });
+  });
+</script>
+</body>
+</html>
