@@ -5,6 +5,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initAccountMenu();
+  initLessonPanel();
   initFilterDrawer();
   initScrollDots();
   initCourseTabs();
@@ -72,6 +73,29 @@ function initAccountMenu() {
       e.preventDefault();
       open();
     }
+  });
+}
+
+/**
+ * Страница урока (course-lesson.html): на мобильных программа курса
+ * и сам урок — два отдельных экрана. Клик по открытому уроку в
+ * списке показывает панель урока, крестик возвращает к программе.
+ * На десктопе оба блока видны одновременно, переключатель не нужен.
+ */
+function initLessonPanel() {
+  const layout = document.getElementById('lessonLayout');
+  const openBtn = document.getElementById('openLessonBtn');
+  const closeBtn = document.getElementById('closeLessonBtn');
+
+  if (!layout || !openBtn) return;
+
+  openBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    layout.classList.add('is-lesson-open');
+  });
+
+  closeBtn?.addEventListener('click', () => {
+    layout.classList.remove('is-lesson-open');
   });
 }
 

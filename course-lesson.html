@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Урок 3. Дыхательные практики для снижения тревоги — GrandVer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/catalog.css">
+<link rel="stylesheet" href="css/account.css">
+<link rel="stylesheet" href="css/lesson.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ==========================================================================
+     HEADER
+     ========================================================================== -->
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo">
+      <img src="/assets/img/logo/logo.svg" alt="Логотип">
+    </a>
+
+    <div class="header__right">
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Главная</a>
+        <a href="courses.html" class="nav__link">Курсы</a>
+        <a href="index.html#books" class="nav__link">Книги</a>
+      </nav>
+
+      <div class="header__actions">
+        <svg class="icon-btn icon-btn--search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
+        </svg>
+        <a href="cart.html" aria-label="Корзина">
+          <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/>
+            <path d="M2 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/>
+          </svg>
+        </a>
+        <a href="account.html" id="accountLink" aria-label="Личный кабинет">
+          <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <svg id="burgerBtn" class="burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ==========================================================================
+     MOBILE MENU (site nav — burger)
+     ========================================================================== -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu__top">
+    <span class="mobile-menu__title">Меню</span>
+    <svg id="closeMenuBtn" class="mobile-menu__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </div>
+  <label class="mobile-search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    <input type="text" placeholder="Поиск">
+  </label>
+  <nav class="mobile-nav">
+    <a href="index.html" class="mobile-nav__link">Главная</a>
+    <a href="courses.html" class="mobile-nav__link">Курсы</a>
+    <a href="index.html#books" class="mobile-nav__link">Книги</a>
+  </nav>
+</div>
+
+<main>
+  <section class="section account-hero" style="background:var(--color-grey-bg); padding-bottom:60px;">
+
+    <!-- Breadcrumbs (desktop) -->
+    <div class="breadcrumbs">
+      <a href="index.html">Главная</a>
+      <span>&gt;</span>
+      <a href="account.html">Личный кабинет</a>
+      <span>&gt;</span>
+      <span class="breadcrumbs__current">Курс: Как справиться с тревогой и стрессом</span>
+    </div>
+
+    <!-- Page heading (desktop) -->
+    <div class="page-heading">
+      <h1 class="page-heading__title">Курс</h1>
+    </div>
+
+    <!-- Heading (mobile only) -->
+    <div class="account-mobile-head">
+      <span class="account-mobile-head__title">Курс</span>
+    </div>
+
+    <div class="lesson-layout" id="lessonLayout">
+
+      <!-- ==================================================================
+           SIDEBAR — программа курса
+           ================================================================== -->
+      <aside class="lesson-sidebar">
+        <div class="lesson-course-info">
+          <p class="lesson-course-info__title">Как справиться с тревогой и стрессом</p>
+          <p class="lesson-course-info__author">Иван Петров</p>
+          <div class="progress">
+            <div class="progress__row">
+              <span class="progress__label">Прогресс</span>
+              <span class="progress__value">45% (2 из 7 пройдено)</span>
+            </div>
+            <div class="progress__track"><div class="progress__fill" style="width:45%"></div></div>
+          </div>
+        </div>
+
+        <div class="lesson-modules">
+
+          <div class="lesson-module">
+            <div class="lesson-module__head">
+              <span class="module-chip">Модуль 1</span>
+              <p class="lesson-module__title">Понимание тревоги</p>
+            </div>
+            <div class="lesson-module__list">
+              <a href="#" class="lesson-row">
+                <svg class="lesson-row__icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#09B760"/><path d="M7 12.5l3 3 7-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="lesson-row__body">
+                  <span class="lesson-row__title">1. Что такое стресс и как он устроен</span>
+                  <span class="lesson-row__meta">12 мин</span>
+                </span>
+              </a>
+              <a href="#" class="lesson-row">
+                <svg class="lesson-row__icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#09B760"/><path d="M7 12.5l3 3 7-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="lesson-row__body">
+                  <span class="lesson-row__title">2. Гормоны стресса и тело</span>
+                  <span class="lesson-row__meta">18 мин</span>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="lesson-module">
+            <div class="lesson-module__head">
+              <span class="module-chip">Модуль 2</span>
+              <p class="lesson-module__title">Практики и инструменты</p>
+            </div>
+            <div class="lesson-module__list">
+              <a href="#" class="lesson-row is-active" id="openLessonBtn">
+                <svg class="lesson-row__icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#4F467C"/><path d="M10 8.5l6 3.5-6 3.5v-7z" fill="white"/></svg>
+                <span class="lesson-row__body">
+                  <span class="lesson-row__title">Урок 3: Дыхательные практики для снижения тревоги</span>
+                  <span class="lesson-row__meta">25 мин</span>
+                </span>
+              </a>
+              <span class="lesson-row is-locked">
+                <span class="lesson-row__icon" style="background:rgba(21,20,25,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center;">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1.5" y="4" width="7" height="5" rx="1"/><path d="M3 4V2.8a2 2 0 0 1 4 0V4"/></svg>
+                </span>
+                <span class="lesson-row__body">
+                  <span class="lesson-row__title">4. Что такое стресс и как он устроен</span>
+                  <span class="lesson-row__meta">12 мин</span>
+                </span>
+              </span>
+              <span class="lesson-row is-locked">
+                <span class="lesson-row__icon" style="background:rgba(21,20,25,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center;">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1.5" y="4" width="7" height="5" rx="1"/><path d="M3 4V2.8a2 2 0 0 1 4 0V4"/></svg>
+                </span>
+                <span class="lesson-row__body">
+                  <span class="lesson-row__title">5. Что такое стресс и как он устроен</span>
+                  <span class="lesson-row__meta">12 мин</span>
+                </span>
+              </span>
+            </div>
+          </div>
+
+          <div class="lesson-module">
+            <div class="lesson-module__head">
+              <span class="module-chip">Модуль 3</span>
+              <p class="lesson-module__title">Психологическая устойчивость</p>
+            </div>
+            <div class="lesson-module__list">
+              <span class="lesson-row is-locked">
+                <span class="lesson-row__icon" style="background:rgba(21,20,25,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center;">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1.5" y="4" width="7" height="5" rx="1"/><path d="M3 4V2.8a2 2 0 0 1 4 0V4"/></svg>
+                </span>
+                <span class="lesson-row__body">
+                  <span class="lesson-row__title">6. Что такое стресс и как он устроен</span>
+                  <span class="lesson-row__meta">12 мин</span>
+                </span>
+              </span>
+              <span class="lesson-row is-locked">
+                <span class="lesson-row__icon" style="background:rgba(21,20,25,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center;">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1.5" y="4" width="7" height="5" rx="1"/><path d="M3 4V2.8a2 2 0 0 1 4 0V4"/></svg>
+                </span>
+                <span class="lesson-row__body">
+                  <span class="lesson-row__title">7. Что такое стресс и как он устроен</span>
+                  <span class="lesson-row__meta">12 мин</span>
+                </span>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+      <!-- ==================================================================
+           LESSON PANEL — текущий урок
+           ================================================================== -->
+      <div class="lesson-panel" id="lessonPanel">
+        <div class="lesson-panel__head">
+          <div class="lesson-panel__head-row">
+            <div class="lesson-panel__head-left">
+              <span class="lesson-panel__number">Урок 3</span>
+              <span class="chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l3 1.5"/></svg>25 мин</span>
+            </div>
+            <svg id="closeLessonBtn" class="lesson-panel__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 6l12 12M18 6L6 18"/>
+            </svg>
+          </div>
+          <p class="lesson-panel__title">Дыхательные практики для снижения тревоги</p>
+        </div>
+
+        <div class="lesson-video">
+          <svg class="lesson-video__play" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="12" fill="currentColor"/>
+            <path d="M10 8.5l6 3.5-6 3.5v-7z" fill="var(--color-text)"/>
+          </svg>
+        </div>
+
+        <div class="lesson-details">
+          <div class="lesson-block">
+            <p class="lesson-block__title">Об уроке</p>
+            <p class="lesson-block__text">На этом уроке мы разберем физиологические механизмы воздействия глубокого дыхания на вегетативную нервную систему. Вы освоите 3 базовые дыхательные техники, помогающие быстро купировать приступы острой тревоги и снизить уровень кортизола в организме. К видеоуроку прикреплена подробная рабочая тетрадь и пошаговый чек-лист ежедневных упражнений.</p>
+          </div>
+
+          <div class="lesson-block">
+            <p class="lesson-block__title">Материалы к уроку</p>
+            <div class="lesson-files">
+              <a href="#" class="lesson-file">
+                <svg class="lesson-file__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/></svg>
+                <span class="lesson-file__body">
+                  <span class="lesson-file__name">Рабочая тетрадь: Дыхательные практики.pdf</span>
+                  <span class="lesson-file__meta">PDF • 4.2 MB</span>
+                </span>
+                <svg class="lesson-file__download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>
+              </a>
+              <a href="#" class="lesson-file">
+                <svg class="lesson-file__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/></svg>
+                <span class="lesson-file__body">
+                  <span class="lesson-file__name">Чек-лист ежедневных упражнений.pdf</span>
+                  <span class="lesson-file__meta">PDF • 1.8 MB</span>
+                </span>
+                <svg class="lesson-file__download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="lesson-nav">
+            <a href="#" class="btn--outline lesson-nav__btn"><svg class="lesson-nav__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 6H1M7 1L2 6l5 5"/></svg>Предыдущий урок</a>
+            <a href="#" class="btn--solid lesson-nav__btn">Продолжить<svg class="lesson-nav__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<!-- ==========================================================================
+     FOOTER
+     ========================================================================== -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <span class="logo__text">
+        <img src="/assets/img/logo/logo-footer.svg" height="50" width="168" alt="Логотип">
+      </span>
+      <p class="footer__desc">Мы создаем качественный образовательный контент, помогающий находить ответы на внутренние вопросы и совершенствовать навыки.</p>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__heading">Меню</h4>
+      <div class="footer__links">
+        <a href="index.html">Главная</a>
+        <a href="courses.html">Курсы</a>
+        <a href="index.html#books">Книги</a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__heading">Контакты</h4>
+      <div class="footer__links">
+        <p>+371 28700566</p>
+        <p>info@grandver.com</p>
+        <p>Brīvības gatve 214b, Rīga, LV-1039</p>
+        <a href="#" class="footer__link--accent">grandver.com</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer__bottom">© 2026 Учебный центр GrandVer. Все права защищены.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
