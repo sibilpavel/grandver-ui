@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Личный кабинет — Сертификаты | GrandVer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет — Сертификаты | GrandVer</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/variables.css">
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/header.css">
-<link rel="stylesheet" href="css/catalog.css">
-<link rel="stylesheet" href="css/course-card.css">
-<link rel="stylesheet" href="css/account.css">
-<link rel="stylesheet" href="css/footer.css">
-<link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/catalog.css">
+  <link rel="stylesheet" href="css/course-card.css">
+  <link rel="stylesheet" href="css/account.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
@@ -153,94 +153,94 @@
         </nav>
       </aside>
 
-      <!-- Certificate cards -->
-      <div class="account-cards">
+      <!-- Certificate cards (2 в ряд, как в макете) -->
+      <div class="account-cards account-cards--certificates">
 
         <article class="account-card">
           <div class="cert-card__preview" aria-hidden="true">
             <div class="cert-card__sheet">
-              <svg class="cert-card__seal" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="16" cy="13" r="8"/><path d="M12.5 13l2.5 2.5 4.5-5M11 20l-2 9 7-3 7 3-2-9"/></svg>
-              <span class="cert-card__label">Сертификат</span>
-              <span class="cert-card__line"></span>
-              <span class="cert-card__line cert-card__line--short"></span>
+              <div class="cert-card__sheet-heading">
+                <p class="cert-card__sheet-label">СЕРТИФИКАТ</p>
+                <p class="cert-card__sheet-title">«Сон и бессоница. Практический подход»</p>
+              </div>
+              <p class="cert-card__sheet-desc">Выдан Александру Вертинскому за успешное прохождение курса</p>
             </div>
           </div>
           <div class="account-card__body">
             <div class="account-card__top">
-              <div class="account-card__row">
-                <span class="chip">№ GV-2026-0142</span>
-                <span class="cert-card__date">12.03.2026</span>
-              </div>
               <p class="account-card__title">Сон и бессоница. Практический подход</p>
-              <p class="course-card__author">Алексей Смирнов</p>
+              <p class="cert-card__date">Дата завершения: 12 марта 2026</p>
             </div>
-            <a href="#" class="btn--outline" download>Скачать PDF<svg class="btn__icon btn__icon--download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></a>
+            <div class="cert-card__actions">
+              <a href="#" class="btn--solid" download>Скачать PDF<svg class="btn__icon btn__icon--download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></a>
+              <a href="course.html" class="btn--outline">Посмотреть<svg class="btn__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg></a>
+            </div>
           </div>
         </article>
 
         <article class="account-card">
           <div class="cert-card__preview" aria-hidden="true">
             <div class="cert-card__sheet">
-              <svg class="cert-card__seal" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="16" cy="13" r="8"/><path d="M12.5 13l2.5 2.5 4.5-5M11 20l-2 9 7-3 7 3-2-9"/></svg>
-              <span class="cert-card__label">Сертификат</span>
-              <span class="cert-card__line"></span>
-              <span class="cert-card__line cert-card__line--short"></span>
+              <div class="cert-card__sheet-heading">
+                <p class="cert-card__sheet-label">СЕРТИФИКАТ</p>
+                <p class="cert-card__sheet-title">«Как справиться с тревогой и стрессом»</p>
+              </div>
+              <p class="cert-card__sheet-desc">Выдан Александру Вертинскому за успешное прохождение курса</p>
             </div>
           </div>
           <div class="account-card__body">
             <div class="account-card__top">
-              <div class="account-card__row">
-                <span class="chip">№ GV-2026-0098</span>
-                <span class="cert-card__date">27.02.2026</span>
-              </div>
               <p class="account-card__title">Как справиться с тревогой и стрессом</p>
-              <p class="course-card__author">Иван Петров</p>
+              <p class="cert-card__date">Дата завершения: 27 февраля 2026</p>
             </div>
-            <a href="#" class="btn--outline" download>Скачать PDF<svg class="btn__icon btn__icon--download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></a>
+            <div class="cert-card__actions">
+              <a href="#" class="btn--solid" download>Скачать PDF<svg class="btn__icon btn__icon--download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></a>
+              <a href="course.html" class="btn--outline">Посмотреть<svg class="btn__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg></a>
+            </div>
           </div>
         </article>
 
         <article class="account-card">
           <div class="cert-card__preview" aria-hidden="true">
             <div class="cert-card__sheet">
-              <svg class="cert-card__seal" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="16" cy="13" r="8"/><path d="M12.5 13l2.5 2.5 4.5-5M11 20l-2 9 7-3 7 3-2-9"/></svg>
-              <span class="cert-card__label">Сертификат</span>
-              <span class="cert-card__line"></span>
-              <span class="cert-card__line cert-card__line--short"></span>
+              <div class="cert-card__sheet-heading">
+                <p class="cert-card__sheet-label">СЕРТИФИКАТ</p>
+                <p class="cert-card__sheet-title">«Привычки, которые меняют жизнь»</p>
+              </div>
+              <p class="cert-card__sheet-desc">Выдан Александру Вертинскому за успешное прохождение курса</p>
             </div>
           </div>
           <div class="account-card__body">
             <div class="account-card__top">
-              <div class="account-card__row">
-                <span class="chip">№ GV-2025-0871</span>
-                <span class="cert-card__date">15.12.2025</span>
-              </div>
               <p class="account-card__title">Привычки, которые меняют жизнь</p>
-              <p class="course-card__author">Иван Петров</p>
+              <p class="cert-card__date">Дата завершения: 12 декабря 2025</p>
             </div>
-            <a href="#" class="btn--outline" download>Скачать PDF<svg class="btn__icon btn__icon--download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></a>
+            <div class="cert-card__actions">
+              <a href="#" class="btn--solid" download>Скачать PDF<svg class="btn__icon btn__icon--download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></a>
+              <a href="course.html" class="btn--outline">Посмотреть<svg class="btn__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg></a>
+            </div>
           </div>
         </article>
 
         <article class="account-card">
           <div class="cert-card__preview" aria-hidden="true">
             <div class="cert-card__sheet">
-              <svg class="cert-card__seal" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="16" cy="13" r="8"/><path d="M12.5 13l2.5 2.5 4.5-5M11 20l-2 9 7-3 7 3-2-9"/></svg>
-              <span class="cert-card__label">Сертификат</span>
-              <span class="cert-card__line"></span>
-              <span class="cert-card__line cert-card__line--short"></span>
+              <div class="cert-card__sheet-heading">
+                <p class="cert-card__sheet-label">СЕРТИФИКАТ</p>
+                <p class="cert-card__sheet-title">«Границы в отношениях»</p>
+              </div>
+              <p class="cert-card__sheet-desc">Выдан Александру Вертинскому за успешное прохождение курса</p>
             </div>
           </div>
           <div class="account-card__body">
             <div class="account-card__top">
-              <div class="account-card__row">
-                <span class="chip">№ GV-2025-0634</span>
-                <span class="cert-card__date">03.10.2025</span>
-              </div>
               <p class="account-card__title">Границы в отношениях</p>
-              <p class="course-card__author">Марина Иванова</p>
+              <p class="cert-card__date">Дата завершения: 3 октября 2025</p>
             </div>
-            <a href="#" class="btn--outline" download>Скачать PDF<svg class="btn__icon btn__icon--download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></a>
+            <div class="cert-card__actions">
+              <a href="#" class="btn--solid" download>Скачать PDF<svg class="btn__icon btn__icon--download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></a>
+              <a href="course.html" class="btn--outline">Посмотреть<svg class="btn__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg></a>
+            </div>
           </div>
         </article>
 

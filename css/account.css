@@ -332,91 +332,123 @@
 }
 
 /* ---- Сертификаты -------------------------------------------------------- */
+
+/* 2 карточки в ряд на десктопе, как в макете (468px + 468px + gap 20
+   в контейнере ~955px рядом с сайдбаром). На мобильных — 1 в ряд. */
+.account-cards--certificates {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .cert-card__preview {
-  height: 180px;
-  padding: 20px;
+  height: 220px;
+  padding: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--color-purple-light);
+  border-radius: 8px 8px 0 0;
 }
 
 .cert-card__sheet {
   width: 100%;
-  max-width: 190px;
-  aspect-ratio: 1.414;
-  padding: 12px;
+  max-width: 340px;
+  padding: 24px;
   border-radius: 4px;
-  border: 1px solid rgba(79, 70, 124, 0.2);
+  border: 1px solid var(--color-purple);
   background: var(--color-white);
-  box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 24px;
+  text-align: center;
+}
+
+.cert-card__sheet-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.cert-card__sheet-label {
+  font-size: 20px;
+  font-weight: var(--fw-semibold);
   color: var(--color-purple);
 }
 
-.cert-card__seal {
-  width: 28px;
-  height: 28px;
+.cert-card__sheet-title {
+  font-size: 16px;
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
 }
 
-.cert-card__label {
-  font-size: 10px;
-  font-weight: var(--fw-bold);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+.cert-card__sheet-desc {
+  font-size: 12px;
+  color: var(--color-text-60);
 }
-
-.cert-card__line {
-  height: 4px;
-  width: 70%;
-  border-radius: 2px;
-  background: var(--color-purple-light);
-}
-
-.cert-card__line--short { width: 45%; }
 
 .cert-card__date {
   font-size: 14px;
   color: var(--color-text-60);
 }
 
-/* ---- Избранное ---------------------------------------------------------- */
-.account-cards .course-card { position: relative; }
-
-.fav-btn {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 2;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--color-white);
-  color: var(--color-purple);
+.cert-card__actions {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-card);
-  transition: transform var(--transition-fast);
+  gap: 12px;
+  width: 100%;
 }
 
-.fav-btn:hover { transform: scale(1.08); }
-
-.fav-btn svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
+.cert-card__actions .btn--solid,
+.cert-card__actions .btn--outline {
+  width: auto;
+  flex: 1 0 0;
 }
 
-.account-cards .course-card.is-removing {
-  opacity: 0;
-  transform: scale(0.96);
-  transition: opacity var(--transition-base), transform var(--transition-base);
+/* ---- Избранное: вкладки «Курсы» / «Книги» -------------------------------
+   Базовые стили .tabs / .tabs__link / .tab-panel — они же используются
+   JS-логикой initCourseTabs() на странице курса, но там подключён
+   course-page.css с этими же классами, а здесь (account-favorites.html)
+   его нет, поэтому определяем их тут целиком, не только переопределением. */
+.tabs {
+  display: flex;
+  gap: 48px;
+  width: 100%;
+  border-bottom: 2px solid var(--color-grey-btn);
+  overflow-x: auto;
+  scrollbar-width: none;
 }
+
+.tabs::-webkit-scrollbar { display: none; }
+
+.tabs__link {
+  flex-shrink: 0;
+  padding-bottom: 12px;
+  font-size: 20px;
+  font-weight: var(--fw-regular);
+  color: var(--color-text-60);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.tabs__link:hover { color: var(--color-text); }
+
+.tabs__link.is-active {
+  color: var(--color-text);
+  font-weight: var(--fw-medium);
+  border-color: var(--color-purple);
+}
+
+.tab-panel { display: none; width: 100%; }
+.tab-panel.is-active { display: block; }
+
+/* .account-cards.tab-panel — панель, у которой контент должен остаться
+   grid, а не превратиться в block, как у обычной .tab-panel выше. */
+.account-cards.tab-panel { display: none; }
+.account-cards.tab-panel.is-active { display: grid; }
 
 .account-empty {
   background: var(--color-white);
@@ -447,8 +479,16 @@
   background: var(--color-white);
   border-radius: 10px;
   box-shadow: var(--shadow-card);
-  overflow: hidden;
   min-width: 0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.table-card__title {
+  font-size: 20px;
+  font-weight: var(--fw-semibold);
 }
 
 /* Горизонтальный скролл только внутри карточки, страница не «уезжает».
@@ -461,10 +501,10 @@
   scrollbar-color: var(--color-grey-btn) transparent;
   background-color: var(--color-white);
   background-image:
-    linear-gradient(to right, var(--color-white) 30%, rgba(255, 255, 255, 0)),
-    linear-gradient(to left, var(--color-white) 30%, rgba(255, 255, 255, 0)),
-    linear-gradient(to right, rgba(16, 15, 39, 0.14), rgba(16, 15, 39, 0)),
-    linear-gradient(to left, rgba(16, 15, 39, 0.14), rgba(16, 15, 39, 0));
+          linear-gradient(to right, var(--color-white) 30%, rgba(255, 255, 255, 0)),
+          linear-gradient(to left, var(--color-white) 30%, rgba(255, 255, 255, 0)),
+          linear-gradient(to right, rgba(16, 15, 39, 0.14), rgba(16, 15, 39, 0)),
+          linear-gradient(to left, rgba(16, 15, 39, 0.14), rgba(16, 15, 39, 0));
   background-position: 0 0, 100% 0, 0 0, 100% 0;
   background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
   background-repeat: no-repeat;
@@ -478,17 +518,23 @@
   font-size: 14px;
 }
 
-.data-table th {
-  padding: 16px 20px;
-  text-align: left;
-  font-weight: var(--fw-medium);
-  color: var(--color-text-60);
-  white-space: nowrap;
-  border-bottom: 2px solid var(--color-divider);
+.data-table thead tr {
+  background: var(--color-purple-light);
 }
 
+.data-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.data-table th:first-child { border-radius: 6px 0 0 6px; }
+.data-table th:last-child { border-radius: 0 6px 6px 0; }
+
 .data-table td {
-  padding: 16px 20px;
+  padding: 16px;
   vertical-align: middle;
   border-bottom: 1px solid var(--color-divider);
 }
@@ -500,31 +546,38 @@
 
 .data-table .btn { font-size: 14px; }
 
+.data-table__link {
+  color: var(--color-purple);
+  font-weight: var(--fw-medium);
+  font-size: 14px;
+  text-decoration: underline;
+  transition: opacity var(--transition-fast);
+}
+
+.data-table__link:hover { opacity: 0.75; }
+
 .data-table__num,
 .data-table__date,
 .data-table__sum { white-space: nowrap; }
 
-.data-table__num { font-weight: var(--fw-medium); }
+.data-table__num { font-weight: var(--fw-medium); color: var(--color-purple); }
 .data-table__sum { font-weight: var(--fw-semibold); }
 .data-table__title { min-width: 220px; }
-
-.data-table th:last-child,
-.data-table td:last-child { text-align: right; }
 
 .data-table__dash { color: var(--color-text-40); }
 
 .status {
   display: inline-flex;
   align-items: center;
-  padding: 4px 10px;
-  border-radius: var(--radius-pill);
+  padding: 4px 8px;
+  border-radius: 4px;
   font-size: 12px;
   font-weight: var(--fw-medium);
   white-space: nowrap;
 }
 
-.status--paid     { background: #E3F6EC; color: #078A48; }
-.status--pending  { background: #FFF1D6; color: #9A6200; }
+.status--paid     { background: #DDFEED; color: #09B760; }
+.status--pending  { background: #FFF1DE; color: #DD850A; }
 .status--canceled { background: var(--color-grey-bg); color: var(--color-text-60); }
 
 /* ---- Мой профиль -------------------------------------------------------- */
@@ -645,10 +698,18 @@
 @media (max-width: 768px) {
   .account-hero { padding-bottom: 40px; }
 
-  .cert-card__preview { height: 200px; }
+  .account-cards--certificates { grid-template-columns: 1fr; }
+  .cert-card__preview { height: 200px; padding: 16px; }
+  .cert-card__actions { flex-direction: column; }
+
+  .table-card { padding: 16px; }
+  .table-card__title { font-size: 18px; }
 
   .data-table th,
-  .data-table td { padding: 14px 16px; }
+  .data-table td { padding: 12px 14px; }
+
+  .account-content .tabs { gap: 28px; }
+  .account-content .tabs__link { font-size: 18px; }
 
   .profile-card { padding: 20px 16px; }
   .profile-row { grid-template-columns: 1fr; }

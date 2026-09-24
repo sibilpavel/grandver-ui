@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCourseTabs();
   initAccordions();
   initReviewStars();
-  initFavorites();
   initProfilePhoto();
 });
 
@@ -228,33 +227,6 @@ function initReviewStars() {
         stars.forEach((s, i) => s.classList.toggle('is-filled', i <= index));
       });
     });
-  });
-}
-
-/**
- * Избранное в личном кабинете: клик по сердечку убирает курс из списка
- * (карточка плавно исчезает). Когда список пуст — показываем заглушку.
- */
-function initFavorites() {
-  const grid = document.getElementById('favoritesGrid');
-  const empty = document.getElementById('favoritesEmpty');
-
-  if (!grid) return;
-
-  grid.addEventListener('click', (e) => {
-    const btn = e.target.closest('.fav-btn');
-    if (!btn) return;
-
-    const card = btn.closest('.course-card');
-    card.classList.add('is-removing');
-
-    setTimeout(() => {
-      card.remove();
-      if (!grid.children.length) {
-        grid.hidden = true;
-        if (empty) empty.hidden = false;
-      }
-    }, 300);
   });
 }
 

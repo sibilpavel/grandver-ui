@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Личный кабинет — Счета | GrandVer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет — Счета | GrandVer</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/variables.css">
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/header.css">
-<link rel="stylesheet" href="css/catalog.css">
-<link rel="stylesheet" href="css/course-card.css">
-<link rel="stylesheet" href="css/account.css">
-<link rel="stylesheet" href="css/footer.css">
-<link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/catalog.css">
+  <link rel="stylesheet" href="css/course-card.css">
+  <link rel="stylesheet" href="css/account.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
@@ -156,75 +156,76 @@
       <!-- Invoices table (горизонтальный скролл внутри карточки) -->
       <div class="account-content">
         <div class="table-card">
+          <p class="table-card__title">История платежей</p>
           <div class="table-scroll" tabindex="0" role="region" aria-label="Список счетов">
             <table class="data-table">
               <thead>
-                <tr>
-                  <th>№ счёта</th>
-                  <th>Дата</th>
-                  <th>Наименование</th>
-                  <th>Сумма</th>
-                  <th>Статус</th>
-                  <th>Счёт</th>
-                </tr>
+              <tr>
+                <th>Дата</th>
+                <th>Номер заказа</th>
+                <th>Описание</th>
+                <th>Сумма</th>
+                <th>Статус</th>
+                <th>Документ</th>
+              </tr>
               </thead>
               <tbody>
-            <tr>
-              <td class="data-table__num">GV-INV-00128</td>
-              <td class="data-table__date">12.03.2026</td>
-              <td class="data-table__title">Сон и бессоница. Практический подход</td>
-              <td class="data-table__sum">29 €</td>
-              <td><span class="status status--paid">Оплачен</span></td>
-              <td><a href="#" class="btn btn--text" download>Скачать<svg class="btn__icon btn__icon--download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></a></td>
-            </tr>
-            <tr>
-              <td class="data-table__num">GV-INV-00117</td>
-              <td class="data-table__date">02.03.2026</td>
-              <td class="data-table__title">Книга «Сила привычек»</td>
-              <td class="data-table__sum">24 €</td>
-              <td><span class="status status--paid">Оплачен</span></td>
-              <td><a href="#" class="btn btn--text" download>Скачать<svg class="btn__icon btn__icon--download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></a></td>
-            </tr>
-            <tr>
-              <td class="data-table__num">GV-INV-00104</td>
-              <td class="data-table__date">20.02.2026</td>
-              <td class="data-table__title">Как справиться с тревогой и стрессом</td>
-              <td class="data-table__sum">39 €</td>
-              <td><span class="status status--paid">Оплачен</span></td>
-              <td><a href="#" class="btn btn--text" download>Скачать<svg class="btn__icon btn__icon--download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></a></td>
-            </tr>
-            <tr>
-              <td class="data-table__num">GV-INV-00093</td>
-              <td class="data-table__date">08.02.2026</td>
-              <td class="data-table__title">Эмоциональный интеллект в жизни и работе</td>
-              <td class="data-table__sum">49 €</td>
-              <td><span class="status status--pending">Ожидает оплаты</span></td>
-              <td><a href="checkout.html" class="btn btn--text">Оплатить<svg class="btn__icon" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6h16M11 1l5 5-5 5"/></svg></a></td>
-            </tr>
-            <tr>
-              <td class="data-table__num">GV-INV-00081</td>
-              <td class="data-table__date">21.01.2026</td>
-              <td class="data-table__title">Книга «Внутреннее спокойствие»</td>
-              <td class="data-table__sum">20 €</td>
-              <td><span class="status status--paid">Оплачен</span></td>
-              <td><a href="#" class="btn btn--text" download>Скачать<svg class="btn__icon btn__icon--download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></a></td>
-            </tr>
-            <tr>
-              <td class="data-table__num">GV-INV-00069</td>
-              <td class="data-table__date">11.01.2026</td>
-              <td class="data-table__title">Границы в отношениях</td>
-              <td class="data-table__sum">35 €</td>
-              <td><span class="status status--canceled">Отменён</span></td>
-              <td><span class="data-table__dash">—</span></td>
-            </tr>
-            <tr>
-              <td class="data-table__num">GV-INV-00052</td>
-              <td class="data-table__date">15.12.2025</td>
-              <td class="data-table__title">Привычки, которые меняют жизнь</td>
-              <td class="data-table__sum">45 €</td>
-              <td><span class="status status--paid">Оплачен</span></td>
-              <td><a href="#" class="btn btn--text" download>Скачать<svg class="btn__icon btn__icon--download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></a></td>
-            </tr>
+              <tr>
+                <td class="data-table__date">12.03.2026</td>
+                <td class="data-table__num">GV-INV-00128</td>
+                <td class="data-table__title">Курс «Сон и бессоница. Практический подход»</td>
+                <td class="data-table__sum">29€</td>
+                <td><span class="status status--paid">Оплачен</span></td>
+                <td><a href="#" class="data-table__link" download>Скачать счёт</a></td>
+              </tr>
+              <tr>
+                <td class="data-table__date">02.03.2026</td>
+                <td class="data-table__num">GV-INV-00117</td>
+                <td class="data-table__title">Книга «Сила привычек» (Цифровая версия)</td>
+                <td class="data-table__sum">24€</td>
+                <td><span class="status status--paid">Оплачен</span></td>
+                <td><a href="#" class="data-table__link" download>Скачать счёт</a></td>
+              </tr>
+              <tr>
+                <td class="data-table__date">20.02.2026</td>
+                <td class="data-table__num">GV-INV-00104</td>
+                <td class="data-table__title">Курс «Как справиться с тревогой и стрессом»</td>
+                <td class="data-table__sum">39€</td>
+                <td><span class="status status--paid">Оплачен</span></td>
+                <td><a href="#" class="data-table__link" download>Скачать счёт</a></td>
+              </tr>
+              <tr>
+                <td class="data-table__date">08.02.2026</td>
+                <td class="data-table__num">GV-INV-00093</td>
+                <td class="data-table__title">Курс «Эмоциональный интеллект в жизни и работе»</td>
+                <td class="data-table__sum">49€</td>
+                <td><span class="status status--pending">Ожидает</span></td>
+                <td><a href="checkout.html" class="data-table__link">Оплатить</a></td>
+              </tr>
+              <tr>
+                <td class="data-table__date">21.01.2026</td>
+                <td class="data-table__num">GV-INV-00081</td>
+                <td class="data-table__title">Книга «Внутреннее спокойствие»</td>
+                <td class="data-table__sum">20€</td>
+                <td><span class="status status--paid">Оплачен</span></td>
+                <td><a href="#" class="data-table__link" download>Скачать счёт</a></td>
+              </tr>
+              <tr>
+                <td class="data-table__date">11.01.2026</td>
+                <td class="data-table__num">GV-INV-00069</td>
+                <td class="data-table__title">Курс «Границы в отношениях»</td>
+                <td class="data-table__sum">35€</td>
+                <td><span class="status status--canceled">Отменён</span></td>
+                <td><span class="data-table__dash">—</span></td>
+              </tr>
+              <tr>
+                <td class="data-table__date">15.12.2025</td>
+                <td class="data-table__num">GV-INV-00052</td>
+                <td class="data-table__title">Курс «Привычки, которые меняют жизнь»</td>
+                <td class="data-table__sum">45€</td>
+                <td><span class="status status--paid">Оплачен</span></td>
+                <td><a href="#" class="data-table__link" download>Скачать счёт</a></td>
+              </tr>
               </tbody>
             </table>
           </div>
