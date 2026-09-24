@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Личный кабинет — Мой профиль | GrandVer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/catalog.css">
+<link rel="stylesheet" href="css/course-card.css">
+<link rel="stylesheet" href="css/account.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ==========================================================================
+     HEADER
+     ========================================================================== -->
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo">
+      <img src="/assets/img/logo/logo.svg" alt="Логотип">
+    </a>
+
+    <div class="header__right">
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Главная</a>
+        <a href="courses.html" class="nav__link">Курсы</a>
+        <a href="index.html#books" class="nav__link">Книги</a>
+      </nav>
+
+      <div class="header__actions">
+        <svg class="icon-btn icon-btn--search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
+        </svg>
+        <a href="cart.html" aria-label="Корзина">
+          <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/>
+            <path d="M2 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/>
+          </svg>
+        </a>
+        <a href="account.html" id="accountLink" aria-label="Личный кабинет">
+          <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <svg id="burgerBtn" class="burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ==========================================================================
+     MOBILE MENU (site nav — burger)
+     ========================================================================== -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu__top">
+    <span class="mobile-menu__title">Меню</span>
+    <svg id="closeMenuBtn" class="mobile-menu__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </div>
+  <label class="mobile-search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    <input type="text" placeholder="Поиск">
+  </label>
+  <nav class="mobile-nav">
+    <a href="index.html" class="mobile-nav__link">Главная</a>
+    <a href="courses.html" class="mobile-nav__link">Курсы</a>
+    <a href="index.html#books" class="mobile-nav__link">Книги</a>
+  </nav>
+</div>
+
+<!-- ==========================================================================
+     ACCOUNT MENU (mobile drawer — выбор раздела кабинета)
+     ========================================================================== -->
+<div class="mobile-menu" id="accountMenu">
+  <div class="mobile-menu__top">
+    <span></span>
+    <svg id="closeAccountMenuBtn" class="mobile-menu__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </div>
+  <div class="account-sidebar">
+    <div class="account-profile">
+      <img class="account-profile__photo" src="https://i.pravatar.cc/160?img=13" alt="Александр Вертинский">
+      <p class="account-profile__name">Александр Вертинский</p>
+      <p class="account-profile__email">aleksandr@gmail.com</p>
+    </div>
+    <nav class="account-nav">
+      <a href="account.html" class="account-nav__item">Мои курсы</a>
+      <a href="account-books.html" class="account-nav__item">Мои книги</a>
+      <a href="account-certificates.html" class="account-nav__item">Сертификаты</a>
+      <a href="account-invoices.html" class="account-nav__item">Счета</a>
+      <a href="account-favorites.html" class="account-nav__item">Избранное</a>
+      <a href="account-profile.html" class="account-nav__item is-active">Мой профиль</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+  <section class="section account-hero">
+
+    <!-- Breadcrumbs (desktop) -->
+    <div class="breadcrumbs">
+      <a href="index.html">Главная</a>
+      <span>&gt;</span>
+      <a href="account.html">Личный кабинет</a>
+      <span>&gt;</span>
+      <span class="breadcrumbs__current">Мой профиль</span>
+    </div>
+
+    <!-- Page heading (desktop) -->
+    <div class="page-heading">
+      <h1 class="page-heading__title">Личный кабинет</h1>
+    </div>
+
+    <!-- Heading + menu trigger (mobile only) -->
+    <div class="account-mobile-head">
+      <span class="account-mobile-head__title">Мой профиль</span>
+      <svg id="accountMenuBtn" class="account-menu-trigger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </div>
+
+    <div class="account-layout">
+
+      <!-- Sidebar (desktop only) -->
+      <aside class="account-sidebar">
+        <div class="account-profile">
+          <img class="account-profile__photo" src="https://i.pravatar.cc/160?img=13" alt="Александр Вертинский">
+          <p class="account-profile__name">Александр Вертинский</p>
+          <p class="account-profile__email">aleksandr@gmail.com</p>
+        </div>
+        <nav class="account-nav">
+          <a href="account.html" class="account-nav__item">Мои курсы</a>
+          <a href="account-books.html" class="account-nav__item">Мои книги</a>
+          <a href="account-certificates.html" class="account-nav__item">Сертификаты</a>
+          <a href="account-invoices.html" class="account-nav__item">Счета</a>
+          <a href="account-favorites.html" class="account-nav__item">Избранное</a>
+          <a href="account-profile.html" class="account-nav__item is-active">Мой профиль</a>
+        </nav>
+      </aside>
+
+      <!-- Profile form -->
+      <div class="account-content">
+
+        <form class="profile-card" action="#" id="profileForm">
+          <h2 class="profile-card__title">Личные данные</h2>
+
+          <div class="profile-photo">
+            <img class="profile-photo__img" id="profilePhotoPreview" src="https://i.pravatar.cc/160?img=13" alt="Фото профиля">
+            <div class="profile-photo__actions">
+              <label class="btn--outline btn--sm">
+                Изменить фото
+                <input type="file" id="profilePhotoInput" accept="image/png, image/jpeg, image/webp">
+              </label>
+              <span class="profile-photo__hint">JPG, PNG или WEBP, до 5 МБ</span>
+            </div>
+          </div>
+
+          <div class="profile-form">
+            <div class="profile-row">
+              <label class="profile-field">
+                <span class="profile-field__label">Имя</span>
+                <input type="text" name="firstName" value="Александр" autocomplete="given-name">
+              </label>
+              <label class="profile-field">
+                <span class="profile-field__label">Фамилия</span>
+                <input type="text" name="lastName" value="Вертинский" autocomplete="family-name">
+              </label>
+            </div>
+            <div class="profile-row">
+              <label class="profile-field">
+                <span class="profile-field__label">Email</span>
+                <input type="email" name="email" value="aleksandr@gmail.com" autocomplete="email">
+              </label>
+              <label class="profile-field">
+                <span class="profile-field__label">Телефон</span>
+                <input type="tel" name="phone" placeholder="+371 00000000" autocomplete="tel">
+              </label>
+            </div>
+          </div>
+
+          <hr class="profile-divider">
+
+          <h2 class="profile-card__title">Смена пароля</h2>
+          <div class="profile-form">
+            <label class="profile-field">
+              <span class="profile-field__label">Текущий пароль</span>
+              <input type="password" name="currentPassword" placeholder="Введите текущий пароль" autocomplete="current-password">
+            </label>
+            <div class="profile-row">
+              <label class="profile-field">
+                <span class="profile-field__label">Новый пароль</span>
+                <input type="password" name="newPassword" placeholder="Не менее 8 символов" autocomplete="new-password">
+              </label>
+              <label class="profile-field">
+                <span class="profile-field__label">Повторите пароль</span>
+                <input type="password" name="repeatPassword" placeholder="Повторите новый пароль" autocomplete="new-password">
+              </label>
+            </div>
+          </div>
+
+          <div class="profile-actions">
+            <button type="submit" class="btn--solid">Сохранить</button>
+            <a href="index.html" class="btn--outline">Выйти</a>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ==========================================================================
+     FOOTER
+     ========================================================================== -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <span class="logo__text">
+        <img src="/assets/img/logo/logo-footer.svg" height="50" width="168" alt="Логотип">
+      </span>
+      <p class="footer__desc">Мы создаем качественный образовательный контент, помогающий находить ответы на внутренние вопросы и совершенствовать навыки.</p>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__heading">Меню</h4>
+      <div class="footer__links">
+        <a href="index.html">Главная</a>
+        <a href="courses.html">Курсы</a>
+        <a href="index.html#books">Книги</a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__heading">Контакты</h4>
+      <div class="footer__links">
+        <p>+371 28700566</p>
+        <p>info@grandver.com</p>
+        <p>Brīvības gatve 214b, Rīga, LV-1039</p>
+        <a href="#" class="footer__link--accent">grandver.com</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer__bottom">© 2026 Учебный центр GrandVer. Все права защищены.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
