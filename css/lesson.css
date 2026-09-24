@@ -324,11 +324,21 @@
   flex-shrink: 0;
 }
 
+.lesson-nav__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
 /* ==========================================================================
    Mobile: программа курса и сам урок — два отдельных «экрана»
    ========================================================================== */
 @media (max-width: 768px) {
-  .lesson-layout { flex-direction: column; }
+  .lesson-layout {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
   .lesson-sidebar {
     width: 100%;
@@ -338,7 +348,11 @@
   .lesson-course-info__title { font-size: 20px; }
   .lesson-course-info__author { font-size: 14px; }
 
-  .lesson-panel { display: none; }
+  .lesson-panel {
+    display: none;
+    width: 100%;
+    min-width: 0;
+  }
   .lesson-panel__close { display: block; }
   .lesson-panel__number { font-size: 24px; }
   .lesson-panel__title { font-size: 20px; }
@@ -348,7 +362,13 @@
   .lesson-video { height: 214px; aspect-ratio: auto; }
   .lesson-video__play { width: 40px; height: 40px; }
   .lesson-files { flex-direction: column; }
-  .lesson-nav__btn { flex: 1; }
+
+  .lesson-nav__btn {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .lesson-nav__btn.btn--outline { padding: 0 18px; }
 
   .lesson-layout.is-lesson-open .lesson-sidebar { display: none; }
   .lesson-layout.is-lesson-open .lesson-panel { display: flex; }
