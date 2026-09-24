@@ -141,13 +141,12 @@
 .load-more {
   display: flex;
   justify-content: center;
-  margin-top: 32px;
+  margin-top: 20px;
 }
 
 .load-more .btn__icon {
   width: 10px;
   height: 12px;
-  transform: rotate(90deg);
 }
 
 /* ==========================================================================

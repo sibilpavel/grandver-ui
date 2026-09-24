@@ -88,3 +88,18 @@
   font-size: 24px;
   font-weight: var(--fw-bold);
 }
+
+/* Grid used on the books catalog page */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 20px;
+  flex: 1;
+}
+
+.book-grid .book-card {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  flex: 1 1 auto;
+}
