@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initCourseTabs();
   initAccordions();
   initReviewStars();
+  initFavorites();
+  initProfilePhoto();
 });
 
 /**
@@ -226,5 +228,51 @@ function initReviewStars() {
         stars.forEach((s, i) => s.classList.toggle('is-filled', i <= index));
       });
     });
+  });
+}
+
+/**
+ * Избранное в личном кабинете: клик по сердечку убирает курс из списка
+ * (карточка плавно исчезает). Когда список пуст — показываем заглушку.
+ */
+function initFavorites() {
+  const grid = document.getElementById('favoritesGrid');
+  const empty = document.getElementById('favoritesEmpty');
+
+  if (!grid) return;
+
+  grid.addEventListener('click', (e) => {
+    const btn = e.target.closest('.fav-btn');
+    if (!btn) return;
+
+    const card = btn.closest('.course-card');
+    card.classList.add('is-removing');
+
+    setTimeout(() => {
+      card.remove();
+      if (!grid.children.length) {
+        grid.hidden = true;
+        if (empty) empty.hidden = false;
+      }
+    }, 300);
+  });
+}
+
+/**
+ * Профиль: предпросмотр выбранного фото сразу в аватаре.
+ */
+function initProfilePhoto() {
+  const input = document.getElementById('profilePhotoInput');
+  const preview = document.getElementById('profilePhotoPreview');
+
+  if (!input || !preview) return;
+
+  input.addEventListener('change', () => {
+    const file = input.files && input.files[0];
+    if (!file || !file.type.startsWith('image/')) return;
+
+    const reader = new FileReader();
+    reader.onload = () => { preview.src = reader.result; };
+    reader.readAsDataURL(file);
   });
 }

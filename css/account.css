@@ -1,6 +1,11 @@
 /* ==========================================================================
    Личный кабинет
    ========================================================================== */
+.account-hero {
+  background: var(--color-grey-bg);
+  padding-bottom: 60px;
+}
+
 .account-hero .page-heading { margin-bottom: 24px; }
 
 .account-layout {
@@ -8,6 +13,18 @@
   align-items: flex-start;
   gap: 20px;
   width: 100%;
+  min-width: 0;
+}
+
+/* Правая колонка (карточки / таблица / форма). min-width:0 обязателен:
+   без него flex-элемент не сжимается уже своего содержимого, и широкая
+   таблица растягивает всю страницу вместо внутреннего скролла. */
+.account-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* ---- Sidebar (desktop) / drawer content (mobile) ---- */
@@ -16,8 +33,8 @@
   border-radius: 10px;
   box-shadow: var(--shadow-toolbar);
   padding: 20px;
-  width: 305px;
-  flex: 0 0 305px;
+  width: clamp(240px, 24vw, 305px);
+  flex: 0 0 clamp(240px, 24vw, 305px);
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -48,6 +65,8 @@
   font-size: 14px;
   color: var(--color-text-60);
   text-align: center;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .account-nav {
@@ -75,20 +94,29 @@
   color: var(--color-purple);
 }
 
-/* ---- Course cards ---- */
+/* ---- Cards grid ----------------------------------------------------------
+   Сетка сама решает, сколько карточек помещается в ряд: колонки не уже
+   290px и делят оставшееся место поровну. На 1440px получается ровно 3
+   колонки по 305px как в макете, на широких экранах — 4, 5… и лишние
+   карточки переносятся на новую строку. Общая для «Мои курсы»,
+   «Мои книги», «Сертификаты» и «Избранное». */
 .account-cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr));
   gap: 20px;
   flex: 1;
+  min-width: 0;
+  align-items: stretch;
 }
+
+.account-cards[hidden] { display: none; }
 
 .account-card {
   background: var(--color-white);
   border-radius: 10px;
   box-shadow: var(--shadow-card);
   overflow: hidden;
-  flex: 0 0 305px;
-  width: 305px;
+  min-width: 0;
   display: flex;
   flex-direction: column;
 }
@@ -221,6 +249,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .account-mobile-head__title {
@@ -244,12 +273,396 @@
 }
 
 @media (max-width: 768px) {
-  .account-layout { flex-direction: column; }
+  /* stretch (а не flex-start): иначе правая колонка сжимается по ширине
+     контента и широкая таблица растягивает всю страницу */
+  .account-layout { flex-direction: column; align-items: stretch; }
+  .account-content { width: 100%; }
   .account-layout > .account-sidebar { display: none; }
-  .account-cards { flex-direction: column; width: 100%; }
-  .account-card { width: 100%; flex: 1 1 auto; }
   .account-card__image { height: 220px; }
   .account-hero .breadcrumbs,
   .account-hero .page-heading { display: none; }
   .account-mobile-head { display: flex; }
+}
+
+/* ==========================================================================
+   Общие элементы новых разделов кабинета
+   ========================================================================== */
+
+/* Карточки книг / курсов внутри сетки кабинета занимают всю ширину колонки
+   (базовые .book-card и .course-card имеют фиксированные 305px и 88vw
+   на мобильных — для карусели на главной это нужно, для сетки нет). */
+.account-cards .book-card,
+.account-cards .course-card {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.btn__icon--download {
+  width: 16px;
+  height: 16px;
+}
+
+.btn--sm {
+  width: auto;
+  height: 40px;
+  padding: 0 20px;
+  font-size: 14px;
+}
+
+/* ---- Мои книги --------------------------------------------------------- */
+.account-cards .book-card__body {
+  height: auto;
+  min-height: 172px;
+  align-self: stretch;
+  gap: 16px;
+}
+
+.account-cards .book-card__title {
+  font-size: 20px;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.account-cards .book-card__cover {
+  height: auto;
+  min-height: 200px;
+  align-self: stretch;
+}
+
+/* ---- Сертификаты -------------------------------------------------------- */
+.cert-card__preview {
+  height: 180px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-purple-light);
+}
+
+.cert-card__sheet {
+  width: 100%;
+  max-width: 190px;
+  aspect-ratio: 1.414;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(79, 70, 124, 0.2);
+  background: var(--color-white);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--color-purple);
+}
+
+.cert-card__seal {
+  width: 28px;
+  height: 28px;
+}
+
+.cert-card__label {
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.cert-card__line {
+  height: 4px;
+  width: 70%;
+  border-radius: 2px;
+  background: var(--color-purple-light);
+}
+
+.cert-card__line--short { width: 45%; }
+
+.cert-card__date {
+  font-size: 14px;
+  color: var(--color-text-60);
+}
+
+/* ---- Избранное ---------------------------------------------------------- */
+.account-cards .course-card { position: relative; }
+
+.fav-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-fast);
+}
+
+.fav-btn:hover { transform: scale(1.08); }
+
+.fav-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.account-cards .course-card.is-removing {
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.account-empty {
+  background: var(--color-white);
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+  padding: 48px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.account-empty[hidden] { display: none; }
+
+.account-empty__text {
+  font-size: 16px;
+  color: var(--color-text-80);
+}
+
+.account-empty .btn--solid {
+  width: auto;
+  padding: 0 32px;
+}
+
+/* ---- Счета: таблица со скроллом вправо ---------------------------------- */
+.table-card {
+  background: var(--color-white);
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  min-width: 0;
+}
+
+/* Горизонтальный скролл только внутри карточки, страница не «уезжает».
+   Градиенты по краям (local/scroll) подсказывают, что есть куда листать. */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-grey-btn) transparent;
+  background-color: var(--color-white);
+  background-image:
+    linear-gradient(to right, var(--color-white) 30%, rgba(255, 255, 255, 0)),
+    linear-gradient(to left, var(--color-white) 30%, rgba(255, 255, 255, 0)),
+    linear-gradient(to right, rgba(16, 15, 39, 0.14), rgba(16, 15, 39, 0)),
+    linear-gradient(to left, rgba(16, 15, 39, 0.14), rgba(16, 15, 39, 0));
+  background-position: 0 0, 100% 0, 0 0, 100% 0;
+  background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+  background-repeat: no-repeat;
+  background-attachment: local, local, scroll, scroll;
+}
+
+.data-table {
+  width: 100%;
+  min-width: 760px; /* уже этого таблица не сжимается — включается скролл */
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.data-table th {
+  padding: 16px 20px;
+  text-align: left;
+  font-weight: var(--fw-medium);
+  color: var(--color-text-60);
+  white-space: nowrap;
+  border-bottom: 2px solid var(--color-divider);
+}
+
+.data-table td {
+  padding: 16px 20px;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.data-table tbody tr:last-child td { border-bottom: 0; }
+
+.data-table tbody tr { transition: background var(--transition-fast); }
+.data-table tbody tr:hover { background: rgba(244, 244, 247, 0.6); }
+
+.data-table .btn { font-size: 14px; }
+
+.data-table__num,
+.data-table__date,
+.data-table__sum { white-space: nowrap; }
+
+.data-table__num { font-weight: var(--fw-medium); }
+.data-table__sum { font-weight: var(--fw-semibold); }
+.data-table__title { min-width: 220px; }
+
+.data-table th:last-child,
+.data-table td:last-child { text-align: right; }
+
+.data-table__dash { color: var(--color-text-40); }
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: var(--fw-medium);
+  white-space: nowrap;
+}
+
+.status--paid     { background: #E3F6EC; color: #078A48; }
+.status--pending  { background: #FFF1D6; color: #9A6200; }
+.status--canceled { background: var(--color-grey-bg); color: var(--color-text-60); }
+
+/* ---- Мой профиль -------------------------------------------------------- */
+.profile-card {
+  background: var(--color-white);
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.profile-card__title {
+  font-size: 20px;
+  font-weight: var(--fw-medium);
+}
+
+.profile-photo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-photo__img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.profile-photo__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.profile-photo__hint {
+  font-size: 12px;
+  color: var(--color-text-60);
+}
+
+.profile-photo input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.profile-photo .btn--outline { cursor: pointer; }
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.profile-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.profile-field__label {
+  font-size: 14px;
+  font-weight: var(--fw-medium);
+}
+
+.profile-field input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: var(--radius-sm);
+  background: var(--color-grey-input);
+  font-size: 16px;
+  color: var(--color-text);
+  transition: box-shadow var(--transition-fast);
+}
+
+.profile-field input::placeholder { color: var(--color-text-60); }
+
+.profile-field input:focus {
+  box-shadow: inset 0 0 0 1.5px var(--color-purple);
+}
+
+.profile-divider {
+  border: 0;
+  border-top: 2px solid var(--color-divider);
+}
+
+.profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.profile-actions .btn--solid,
+.profile-actions .btn--outline {
+  width: auto;
+  min-width: 200px;
+  padding: 0 32px;
+}
+
+/* ==========================================================================
+   Адаптив
+   ========================================================================== */
+@media (max-width: 768px) {
+  .account-hero { padding-bottom: 40px; }
+
+  .cert-card__preview { height: 200px; }
+
+  .data-table th,
+  .data-table td { padding: 14px 16px; }
+
+  .profile-card { padding: 20px 16px; }
+  .profile-row { grid-template-columns: 1fr; }
+
+  .profile-actions { flex-direction: column; }
+  .profile-actions .btn--solid,
+  .profile-actions .btn--outline { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .profile-photo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-photo__actions { align-items: center; }
 }
