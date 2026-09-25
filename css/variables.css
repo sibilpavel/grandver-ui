@@ -34,8 +34,12 @@
   --shadow-toolbar: 0 4px 4px rgba(23, 19, 38, 0.03);
 
   /* Layout */
-  --container-max: 1440px;
-  --side-padding: clamp(16px, 5.5vw, 80px);
+  --container-max: 1280px;
+  /* Responsive gutter that grows with the viewport up to 80px, then — once
+     the viewport is wide enough that content would exceed --container-max —
+     keeps growing so the content column itself caps at --container-max and
+     stays centered instead of stretching to the screen edges. */
+  --side-padding: max(clamp(16px, 5.5vw, 80px), calc((100% - var(--container-max)) / 2));
 
   /* Typography */
   --font-main: 'Manrope', system-ui, -apple-system, sans-serif;
