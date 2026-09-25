@@ -86,7 +86,7 @@
 
 .book-card__price {
   font-size: 24px;
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-semibold);
 }
 
 /* Grid used on the books catalog page */

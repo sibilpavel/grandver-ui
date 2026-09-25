@@ -1,6 +1,42 @@
 /* ==========================================================================
    Design tokens — GrandVer
    ========================================================================== */
+
+/* Regular */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/assets/fonts/gilroy/Gilroy-Regular_0.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Medium */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/assets/fonts/gilroy/Gilroy-Medium_0.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Semibold */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/assets/fonts/gilroy/Gilroy-Semibold_0.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold / Heavy */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/assets/fonts/gilroy/Gilroy-Heavy_0.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   /* Colors */
   --color-purple: #4F467C;
@@ -42,7 +78,7 @@
   --side-padding: max(clamp(16px, 5.5vw, 80px), calc((100% - var(--container-max)) / 2));
 
   /* Typography */
-  --font-main: 'Manrope', system-ui, -apple-system, sans-serif;
+  --font-main: 'Gilroy', 'Manrope', system-ui, -apple-system, sans-serif;
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-semibold: 600;

@@ -39,7 +39,7 @@
 
 .hero__title {
   font-size: clamp(32px, 4.2vw, 54px);
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-semibold);
   line-height: 1.15;
   text-transform: uppercase;
 }

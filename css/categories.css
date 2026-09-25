@@ -38,7 +38,7 @@
 
 .category-card__title {
   font-size: 22px;
-  font-weight: var(--fw-semibold);
+  font-weight: var(--fw-medium);
   margin-bottom: 6px;
 }
 
