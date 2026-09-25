@@ -27,6 +27,7 @@
 .course-card__title-link {
   display: block;
   color: inherit;
+  margin-top: 12px;
 }
 
 .course-card__image img {
